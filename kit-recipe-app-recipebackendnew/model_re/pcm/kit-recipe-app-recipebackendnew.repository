@@ -1,418 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_1oT2eiM9Ee-Y9K8ooYAGaA">
-  <components__Repository xsi:type="repository:BasicComponent" id="_1ncTwiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_units_UnitController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1ncTwCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsvSM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1ncTwSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository Consumer" requiredInterface__OperationRequiredRole="_1nbsuyM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZK4iM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gKnESM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mYj6CM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZK4CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZK4CM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(unitRepository.findAll())" predecessor_AbstractAction="_1mYj6CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK4SM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(unitRepository.findAll())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(unitRepository.findAll())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZK4SM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZK4CM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZK9SM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gLOICM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZK4yM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZK6iM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mZK6iM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mZK4yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK6yM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mZK5yM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mZK6SM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mZK5CM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZK5SM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZK5SM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.badRequest().build()" predecessor_AbstractAction="_1mZK5CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK5iM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.badRequest().build()"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.badRequest().build()"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mZK5iM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZK5SM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(unit.name() == null || unit.name().isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mZK6yM9Ee-Y9K8ooYAGaA" entityName="newUnit.setName(unit.name())" predecessor_AbstractAction="_1mZK6iM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK8iM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mZK8iM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mZK6yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK8yM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mZK7yM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mZK8SM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mZK7CM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZK7SM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZK7SM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.CONFLICT).build()" predecessor_AbstractAction="_1mZK7CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK7iM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.CONFLICT).build()"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.CONFLICT).build()"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mZK7iM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZK7SM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(found.isPresent())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZK8yM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(unitRepository.save(newUnit))" predecessor_AbstractAction="_1mZK8iM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK9CM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(unitRepository.save(newUnit))"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(unitRepository.save(newUnit))"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZK9CM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZK8yM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mYj5yM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gKnEyM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mYj3CM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mYj4yM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mYj4yM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mYj3CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj5CM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mYj4CM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mYj4iM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mYj3SM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mYj3iM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mYj3iM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).build()" predecessor_AbstractAction="_1mYj3SM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj3yM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).build()"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).build()"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mYj3yM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mYj3iM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(unit.isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mYj5CM9Ee-Y9K8ooYAGaA" entityName="unitRepository.delete(unit.get())" predecessor_AbstractAction="_1mYj4yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj5SM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mYj5SM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Deleted&quot;)" predecessor_AbstractAction="_1mYj5CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj5iM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Deleted&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Deleted&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mYj5iM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mYj5SM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1njoiCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1njohyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Provider" providedInterface__OperationProvidedRole="_1nbsviM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1njoiyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_service_CustomerService">
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1njoiSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_1nbssiM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1njoiiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_1nbstyM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1njojSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1njojCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Provider" providedInterface__OperationProvidedRole="_1nbsuCM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1njokSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_ingredients_IngredientsController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1njojiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsuSM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1njojyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Consumer" requiredInterface__OperationRequiredRole="_1nbsuCM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1njokCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository Consumer" requiredInterface__OperationRequiredRole="_1nbstiM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mX8wSM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gFHgCM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mXVsyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mXVtCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mXVtCM9Ee-Y9K8ooYAGaA" entityName="newIngredient.setName(ingredient.name())" predecessor_AbstractAction="_1mXVsyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVuyM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mXVuyM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mXVtCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVwiM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mXVuCM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mXVuiM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mXVtSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mXVtiM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mXVtiM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)" predecessor_AbstractAction="_1mXVtSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVtyM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mXVtyM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mXVtiM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(tag.isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mXVwiM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mXVuyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVwyM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mXVvyM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mXVwSM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mXVvCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mXVvSM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mXVvSM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)" predecessor_AbstractAction="_1mXVvCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVviM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mXVviM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mXVvSM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(found.isPresent())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mXVwyM9Ee-Y9K8ooYAGaA" entityName="newIngredient.setTag(tag.get())" predecessor_AbstractAction="_1mXVwiM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVxCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mXVxCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(ingredientRepository.save(newIngredient))" predecessor_AbstractAction="_1mXVwyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mX8wCM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(ingredientRepository.save(newIngredient))"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(ingredientRepository.save(newIngredient))"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mX8wCM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mXVxCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mWHmSM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gHjwiM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mWHliM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mWHlyM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mWHlyM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(ingredientRepository.findAll())" predecessor_AbstractAction="_1mWHliM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mWHmCM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(ingredientRepository.findAll())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(ingredientRepository.findAll())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mWHmCM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mWHlyM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mXVsiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gHjwCM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mWHmiM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mWHoSM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mWHoSM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mWHmiM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mWuoCM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mWHniM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mWHoCM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mWHmyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mWHnCM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mWHnCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)" predecessor_AbstractAction="_1mWHmyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mWHnSM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mWHnSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mWHnCM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(ingredient.isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mWuoCM9Ee-Y9K8ooYAGaA" entityName="ingredientRepository.delete(ingredient.get())" predecessor_AbstractAction="_1mWHoSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVsCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mXVsCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Deleted&quot;)" predecessor_AbstractAction="_1mWuoCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mXVsSM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Deleted&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Deleted&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mXVsSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mXVsCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1npvKiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1npvKSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository Provider" providedInterface__OperationProvidedRole="_1nbstiM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1npvLCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_CustomerController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1npvKyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user Provider" providedInterface__OperationProvidedRole="_1nbstCM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZx9CM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gNqZCM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZx8SM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZx8iM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZx8iM9Ee-Y9K8ooYAGaA" entityName="customerService.getRecipes(customerService.getEmail())" predecessor_AbstractAction="_1mZx8SM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZx8yM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.customerService.getRecipes(customerService.getEmail())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="customerService.getRecipes(customerService.getEmail())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZx8yM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZx8iM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZx_SM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gNqYSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZx-iM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZx-yM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZx-yM9Ee-Y9K8ooYAGaA" entityName="new CustomerDTO(customer.getName(),customer.getEmail())" predecessor_AbstractAction="_1mZx-iM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZx_CM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new CustomerDTO(customer.getName(),customer.getEmail())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new CustomerDTO(customer.getName(),customer.getEmail())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZx_CM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZx-yM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZx8CM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gORcyM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZK9yM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZK-CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mZK-CM9Ee-Y9K8ooYAGaA" entityName="customerService.deleteRecipe(customerService.getEmail(),UUID.fromString(id))" predecessor_AbstractAction="_1mZK9yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK-SM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZK-SM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Recipe deleted&quot;)" predecessor_AbstractAction="_1mZK-CM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZK-iM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Recipe deleted&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Recipe deleted&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZK-iM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZK-SM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZyASM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gPfkSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZx_iM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZx_yM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mZx_yM9Ee-Y9K8ooYAGaA" entityName="customerService.changeCustomerName(name.name(),customerService.getEmail())" predecessor_AbstractAction="_1mZx_iM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZyACM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZyACM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZx_yM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZx-SM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gORcSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZx9SM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZx9iM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1mZx9iM9Ee-Y9K8ooYAGaA" entityName="customerService.updateRecipe(customerService.getEmail(),UUID.fromString(id),recipe)" predecessor_AbstractAction="_1mZx9SM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZx9yM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZx9yM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Recipe updated&quot;)" predecessor_AbstractAction="_1mZx9iM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZx-CM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Recipe updated&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Recipe updated&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZx-CM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZx9yM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1nzgJSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_ImageController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1nzgIyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsvCM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1nzgJCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Consumer" requiredInterface__OperationRequiredRole="_1nbsviM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mUSZyM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gIK1SM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mUSZCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mUSZSM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mUSZSM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(imageRepository.findAllProjectedBy())" predecessor_AbstractAction="_1mUSZCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mUSZiM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(imageRepository.findAllProjectedBy())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(imageRepository.findAllProjectedBy())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mUSZiM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mUSZSM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mVggiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gIx4iM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mU5cCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mU5dyM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mU5dyM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mU5cCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mU5gyM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mU5dCM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mU5diM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mU5cSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mU5ciM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mU5ciM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.badRequest().build()" predecessor_AbstractAction="_1mU5cSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mU5cyM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.badRequest().build()"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.badRequest().build()"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mU5cyM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mU5ciM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(file == null || file.isEmpty() || file.getOriginalFilename() == null || file.getOriginalFilename().isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mU5gyM9Ee-Y9K8ooYAGaA" entityName="Try Catch Branch" predecessor_AbstractAction="_1mU5dyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVggCM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mU5eiM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mU5fCM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mU5eCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mU5eSM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mU5eSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mU5eCM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Try Block"/>
-        </branches_Branch>
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mU5gCM9Ee-Y9K8ooYAGaA" entityName="Try Catch Branch">
-          <branchBehaviour_BranchTransition id="_1mU5giM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mU5fSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mU5fiM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mU5fiM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()" predecessor_AbstractAction="_1mU5fSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mU5fyM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mU5fyM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mU5fiM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: catch IOException"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mVggCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())" predecessor_AbstractAction="_1mU5gyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVggSM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mVggSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mVggCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mUSYyM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gIK1yM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1gzgQSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mUSYCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mUSYCM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1gzgQSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mUSYSM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mTEQCM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mTrUCM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1g1VcCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mSdMCM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mSdMCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)" predecessor_AbstractAction="_1g1VcCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mSdMSM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mSdMSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mSdMCM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(dbImageData.isEmpty())"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mUSYSM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)" predecessor_AbstractAction="_1mUSYCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mUSYiM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mUSYiM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mUSYSM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1n5mwCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_service_RecipeService">
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1n4_vSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_1nbstyM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1n4_viM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Consumer" requiredInterface__OperationRequiredRole="_1nbsviM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1n5mwyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_tag_TagsController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1n5mwSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbstSM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1n5mwiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Consumer" requiredInterface__OperationRequiredRole="_1nbsuCM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1maZBSM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gKAAiM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1maZACM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1maZASM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1maZASM9Ee-Y9K8ooYAGaA" entityName="tag.setName(name.name())" predecessor_AbstractAction="_1maZACM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1maZAiM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_1maZAiM9Ee-Y9K8ooYAGaA" entityName="tagRepository.save(tag)" predecessor_AbstractAction="_1maZASM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1maZAyM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1maZAyM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Tag added&quot;)" predecessor_AbstractAction="_1maZAiM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1maZBCM9Ee-Y9K8ooYAGaA">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_rjG2JiM_Ee-j0Y_sc8KBGw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_riKa8iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_tag_TagsController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riKa8CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7SM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_riKa8SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Consumer" requiredInterface__OperationRequiredRole="_riJz6SM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhJuZyM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rba5yCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhJuYiM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJuYyM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhJuYyM_Ee-j0Y_sc8KBGw" entityName="tag.setName(name.name())" predecessor_AbstractAction="_rhJuYiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuZCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhJuZCM_Ee-j0Y_sc8KBGw" entityName="tagRepository.save(tag)" predecessor_AbstractAction="_rhJuYyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuZSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJuZSM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Tag added&quot;)" predecessor_AbstractAction="_rhJuZCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuZiM_Ee-j0Y_sc8KBGw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Tag added&quot;)"/>
@@ -422,11 +17,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1maZBCM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1maZAyM9Ee-Y9K8ooYAGaA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhJuZiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJuZSM_Ee-j0Y_sc8KBGw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mZyBiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gJY9yM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mZyAyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mZyBCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mZyBCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(tagRepository.findAllProjectedBy())" predecessor_AbstractAction="_1mZyAyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mZyBSM9Ee-Y9K8ooYAGaA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhJuYSM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbbg0SM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhJuXiM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJuXyM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJuXyM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(tagRepository.findAllProjectedBy())" predecessor_AbstractAction="_rhJuXiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuYCM_Ee-j0Y_sc8KBGw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(tagRepository.findAllProjectedBy())"/>
@@ -436,128 +31,18 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mZyBSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mZyBCM9Ee-Y9K8ooYAGaA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhJuYCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJuXyM_Ee-j0Y_sc8KBGw"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1n9RIiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_BaseController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1n9RICM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/test[GET] Provider" providedInterface__OperationProvidedRole="_1nbssCM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1n9RISM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/[GET] Provider" providedInterface__OperationProvidedRole="_1nbssSM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mVgkyM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gJY8yM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mVgkCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mVgkSM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mVgkSM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Hello World!&quot;)" predecessor_AbstractAction="_1mVgkCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVgkiM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello World!&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello World!&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mVgkiM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mVgkSM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mVgjiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gIK0SM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mVghCM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mVgiyM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_1mVgiyM9Ee-Y9K8ooYAGaA" entityName="If Branch" predecessor_AbstractAction="_1mVghCM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVgjCM9Ee-Y9K8ooYAGaA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_1mVgiCM9Ee-Y9K8ooYAGaA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_1mVgiiM9Ee-Y9K8ooYAGaA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_1mVghSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mVghiM9Ee-Y9K8ooYAGaA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mVghiM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Hello World!&quot;)" predecessor_AbstractAction="_1mVghSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVghyM9Ee-Y9K8ooYAGaA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello World!&quot;)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello World!&quot;)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_1mVghyM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mVghiM9Ee-Y9K8ooYAGaA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(authentication.getTokenAttributes().get(&quot;email&quot;) == null)"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mVgjCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)" predecessor_AbstractAction="_1mVgiyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mVgjSM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mVgjSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mVgjCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
+  <components__Repository xsi:type="repository:BasicComponent" id="_riOsbSM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riOsbCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository Provider" providedInterface__OperationProvidedRole="_riJz4iM_Ee-j0Y_sc8KBGw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1oA7hSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_exception_ExceptionController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oA7hCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/error Provider" providedInterface__OperationProvidedRole="_1nbsuiM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mWHlCM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gIx5iM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mWHkSM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mWHkiM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mWHkiM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)" predecessor_AbstractAction="_1mWHkSM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mWHkyM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mWHkyM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mWHkiM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1oCwuiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oCwuSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Provider" providedInterface__OperationProvidedRole="_1nbstyM9Ee-Y9K8ooYAGaA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1oCwvSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_recipe_RecipeController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oCwuyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes Provider" providedInterface__OperationProvidedRole="_1nbssyM9Ee-Y9K8ooYAGaA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_1oCwvCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_1nbstyM9Ee-Y9K8ooYAGaA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mYj1iM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gMcQyM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mYj0yM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mYj1CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mYj1CM9Ee-Y9K8ooYAGaA" entityName="recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())" predecessor_AbstractAction="_1mYj0yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj1SM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mYj1SM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mYj1CM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mYj0iM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gNDUSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mX80yM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mYj0CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mYj0CM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(recipeService.addRecipe(recipe))" predecessor_AbstractAction="_1mX80yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj0SM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.addRecipe(recipe))"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.addRecipe(recipe))"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mYj0SM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mYj0CM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mX8yiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gL1MSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mX8xyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mX8yCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mX8yCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(recipeService.getSaisonalRecipes())" predecessor_AbstractAction="_1mX8xyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mX8ySM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.getSaisonalRecipes())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.getSaisonalRecipes())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mX8ySM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mX8yCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mYj2iM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gNDUyM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mYj1yM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mYj2CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mYj2CM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(recipeRepository.findByIsPublicTrue())" predecessor_AbstractAction="_1mYj1yM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mYj2SM9Ee-Y9K8ooYAGaA">
+  <components__Repository xsi:type="repository:BasicComponent" id="_riOscCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_recipe_RecipeController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riOsbiM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes Provider" providedInterface__OperationProvidedRole="_riJz6iM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_riOsbyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_riJz4yM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhH5MiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbZroyM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhH5LyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhH5MCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhH5MCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(recipeRepository.findByIsPublicTrue())" predecessor_AbstractAction="_rhH5LyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhH5MSM_Ee-j0Y_sc8KBGw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeRepository.findByIsPublicTrue())"/>
@@ -567,11 +52,39 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mYj2SM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mYj2CM9Ee-Y9K8ooYAGaA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhH5MSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhH5MCM_Ee-j0Y_sc8KBGw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mX8xiM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gL1MyM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mX8wyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mX8xCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mX8xCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok().body(recipeService.deleteRecipe(id))" predecessor_AbstractAction="_1mX8wyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mX8xSM9Ee-Y9K8ooYAGaA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhH5LiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbZElCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhH5KyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhH5LCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhH5LCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(recipeService.getSaisonalRecipes())" predecessor_AbstractAction="_rhH5KyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhH5LSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.getSaisonalRecipes())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.getSaisonalRecipes())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhH5LSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhH5LCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhH5IiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbaSsCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhHSJyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhH5ICM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhH5ICM_Ee-j0Y_sc8KBGw" entityName="recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())" predecessor_AbstractAction="_rhHSJyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhH5ISM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="recipe.map(value -> ResponseEntity.ok(value.getImageData().getName())).orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhH5ISM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhH5ICM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhH5KiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbaSsiM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhH5JyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhH5KCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhH5KCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok().body(recipeService.deleteRecipe(id))" predecessor_AbstractAction="_rhH5JyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhH5KSM_Ee-j0Y_sc8KBGw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok().body(recipeService.deleteRecipe(id))"/>
@@ -581,25 +94,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mX8xSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mX8xCM9Ee-Y9K8ooYAGaA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhH5KSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhH5KCM_Ee-j0Y_sc8KBGw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mX8ziM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gMcQSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mX8yyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mX8zCM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mX8zCM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))" predecessor_AbstractAction="_1mX8yyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mX8zSM9Ee-Y9K8ooYAGaA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mX8zSM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mX8zCM9Ee-Y9K8ooYAGaA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_1mX80iM9Ee-Y9K8ooYAGaA" describedService__SEFF="_1gL1NSM9Ee-Y9K8ooYAGaA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_1mX8zyM9Ee-Y9K8ooYAGaA" entityName="Start Action" successor_AbstractAction="_1mX80CM9Ee-Y9K8ooYAGaA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_1mX80CM9Ee-Y9K8ooYAGaA" entityName="ResponseEntity.ok(recipeService.getRecommendedRecipes())" predecessor_AbstractAction="_1mX8zyM9Ee-Y9K8ooYAGaA" successor_AbstractAction="_1mX80SM9Ee-Y9K8ooYAGaA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhHSJiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbZEliM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhHSIyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhHSJCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhHSJCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(recipeService.getRecommendedRecipes())" predecessor_AbstractAction="_rhHSIyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSJSM_Ee-j0Y_sc8KBGw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.getRecommendedRecipes())"/>
@@ -609,187 +108,688 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_1mX80SM9Ee-Y9K8ooYAGaA" entityName="Stop Action" predecessor_AbstractAction="_1mX80CM9Ee-Y9K8ooYAGaA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhHSJSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhHSJCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhHSIiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rba5wCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhHSHyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhHSICM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhHSICM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(recipeService.addRecipe(recipe))" predecessor_AbstractAction="_rhHSHyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSISM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.addRecipe(recipe))"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.addRecipe(recipe))"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhHSISM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhHSICM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhH5JiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbZroSM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhH5IyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhH5JCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhH5JCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))" predecessor_AbstractAction="_rhH5IyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhH5JSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(recipeService.addImageToRecipe(recipeId,imageId))"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhH5JSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhH5JCM_Ee-j0Y_sc8KBGw"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1oPlDiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oPlDSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository Provider" providedInterface__OperationProvidedRole="_1nbsuyM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ridV5SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_ImageController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ridV4yM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7CM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ridV5CM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Consumer" requiredInterface__OperationRequiredRole="_riJz5iM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhJHTiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_ratvICM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHSyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHTCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJHTCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(imageRepository.findAllProjectedBy())" predecessor_AbstractAction="_rhJHSyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJHTSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(imageRepository.findAllProjectedBy())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(imageRepository.findAllProjectedBy())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhJHTSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJHTCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhJHSiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rar58CM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHQCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHRyM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhJHRyM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhJHQCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJHSCM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhJHRCM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhJHRiM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHQSM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHQiM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJHQiM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)" predecessor_AbstractAction="_rhJHQSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJHQyM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Image was not found&quot;)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhJHQyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJHQiM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(dbImageData.isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJHSCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)" predecessor_AbstractAction="_rhJHRyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJHSSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.OK).contentType(MediaType.valueOf(&quot;image/png&quot;)).body(imageData)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhJHSSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJHSCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhJuXCM_Ee-j0Y_sc8KBGw" describedService__SEFF="_ratvIyM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHTyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHViM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhJHViM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhJHTyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuWSM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhJHUyM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhJHVSM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHUCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHUSM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJHUSM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.badRequest().build()" predecessor_AbstractAction="_rhJHUCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJHUiM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.badRequest().build()"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.badRequest().build()"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhJHUiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJHUSM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(file == null || file.isEmpty() || file.getOriginalFilename() == null || file.getOriginalFilename().isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhJuWSM_Ee-j0Y_sc8KBGw" entityName="Try Catch Branch" predecessor_AbstractAction="_rhJHViM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuWiM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhJuUCM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhJuUiM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhJHVyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJHWCM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhJHWCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJHVyM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Try Block"/>
+        </branches_Branch>
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhJuViM_Ee-j0Y_sc8KBGw" entityName="Try Catch Branch">
+          <branchBehaviour_BranchTransition id="_rhJuWCM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhJuUyM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhJuVCM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJuVCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()" predecessor_AbstractAction="_rhJuUyM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuVSM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhJuVSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJuVCM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: catch IOException"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhJuWiM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())" predecessor_AbstractAction="_rhJuWSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhJuWyM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.OK).body(imageData.getId().toString())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhJuWyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhJuWiM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_1oPlECM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oPlDyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository Provider" providedInterface__OperationProvidedRole="_1nbssiM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_rii1diM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_ingredients_IngredientsController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rii1cyM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz5SM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_rii1dCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository Consumer" requiredInterface__OperationRequiredRole="_riJz6yM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_rii1dSM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Consumer" requiredInterface__OperationRequiredRole="_riJz6SM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhGD_yM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbcH4iM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhGD9CM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhGD-yM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhGD-yM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhGD9CM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD_CM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhGD-CM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhGD-iM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhGD9SM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhGD9iM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGD9iM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)" predecessor_AbstractAction="_rhGD9SM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD9yM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Ingredient not found&quot;)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhGD9yM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGD9iM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(ingredient.isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhGD_CM_Ee-j0Y_sc8KBGw" entityName="ingredientRepository.delete(ingredient.get())" predecessor_AbstractAction="_rhGD-yM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD_SM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGD_SM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Deleted&quot;)" predecessor_AbstractAction="_rhGD_CM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD_iM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Deleted&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Deleted&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhGD_iM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGD_SM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhGD8yM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbcH5SM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhEOzSM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhE10CM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhE10CM_Ee-j0Y_sc8KBGw" entityName="newIngredient.setName(ingredient.name())" predecessor_AbstractAction="_rhEOzSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhFc5iM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhFc5iM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhE10CM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhFc7SM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhFc4yM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhFc5SM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhFc4CM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhFc4SM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhFc4SM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)" predecessor_AbstractAction="_rhFc4CM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhFc4iM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Tag does not exist&quot;)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhFc4iM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhFc4SM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(tag.isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhFc7SM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhFc5iM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD8CM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhFc6iM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhFc7CM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhFc5yM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhFc6CM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhFc6CM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)" predecessor_AbstractAction="_rhFc5yM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhFc6SM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.FORBIDDEN).body(&quot;Ingredient &quot; + found.get().getName() + &quot; already exists!&quot;)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhFc6SM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhFc6CM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(found.isPresent())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhGD8CM_Ee-j0Y_sc8KBGw" entityName="newIngredient.setTag(tag.get())" predecessor_AbstractAction="_rhFc7SM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD8SM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGD8SM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(ingredientRepository.save(newIngredient))" predecessor_AbstractAction="_rhGD8CM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGD8iM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(ingredientRepository.save(newIngredient))"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(ingredientRepository.save(newIngredient))"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhGD8iM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGD8SM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhEOzCM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbcH4CM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhEOySM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhEOyiM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhEOyiM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(ingredientRepository.findAll())" predecessor_AbstractAction="_rhEOySM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhEOyyM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(ingredientRepository.findAll())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(ingredientRepository.findAll())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhEOyyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhEOyiM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSBQSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend">
-    <assemblyContexts__ComposedStructure id="_1oTPcCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1oPlDiM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oT2diM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1ncTwiM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVroyM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2diM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPcCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1oPlDSM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1ncTwSM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWSsyM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1ncTwCM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSBQCM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oT2diM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSBQCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsvSM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_rint_yM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_service_RecipeService">
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_rint_SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Consumer" requiredInterface__OperationRequiredRole="_riJz5iM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_rint_iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_riJz4yM_Ee-j0Y_sc8KBGw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSBRCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend 3">
-    <assemblyContexts__ComposedStructure id="_1oTPYCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1njoiCM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPYiM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1oCwuiM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPZCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1oCwvSM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPaCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1oPlECM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPciM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1njoiyM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPdCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1nzgJSM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oT2cCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1n5mwCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVEkCM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oTPdCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPYCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1njohyM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1nzgJCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVEkSM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oTPZCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPYiM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1oCwuSM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1oCwvCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVEkyM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2cCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPYCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1njohyM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1n4_viM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVroCM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oTPciM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPYiM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1oCwuSM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1njoiiM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVroiM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2cCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPYiM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1oCwuSM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1n4_vSM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVrpCM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oTPciM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPaCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1oPlDyM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1njoiSM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWSsiM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1nzgIyM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSBQyM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oTPdCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWStSM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1oCwuyM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSBQiM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oTPZCM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSBQiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes Provider" providedInterface__OperationProvidedRole="_1nbssyM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSBQyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsvCM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_rinuASM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_CustomerController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rinuACM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user Provider" providedInterface__OperationProvidedRole="_riJz5CM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhIgQCM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbWoVSM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhIgPSM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhIgPiM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhIgPiM_Ee-j0Y_sc8KBGw" entityName="new CustomerDTO(customer.getName(),customer.getEmail())" predecessor_AbstractAction="_rhIgPSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgPyM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new CustomerDTO(customer.getName(),customer.getEmail())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new CustomerDTO(customer.getName(),customer.getEmail())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhIgPyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhIgPiM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhIgNyM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbWoUCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhIgNCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhIgNSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhIgNSM_Ee-j0Y_sc8KBGw" entityName="customerService.changeCustomerName(name.name(),customerService.getEmail())" predecessor_AbstractAction="_rhIgNCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgNiM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhIgNiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhIgNSM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhIgPCM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbVaMCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhIgOCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhIgOSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhIgOSM_Ee-j0Y_sc8KBGw" entityName="customerService.updateRecipe(customerService.getEmail(),UUID.fromString(id),recipe)" predecessor_AbstractAction="_rhIgOCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgOiM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhIgOiM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Recipe updated&quot;)" predecessor_AbstractAction="_rhIgOSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgOyM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Recipe updated&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Recipe updated&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhIgOyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhIgOiM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhIgRCM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbUzISM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhIgQSM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhIgQiM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhIgQiM_Ee-j0Y_sc8KBGw" entityName="customerService.getRecipes(customerService.getEmail())" predecessor_AbstractAction="_rhIgQSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgQyM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.customerService.getRecipes(customerService.getEmail())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="customerService.getRecipes(customerService.getEmail())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhIgQyM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhIgQiM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhIgMyM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbWoUiM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhH5NCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhIgMCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhIgMCM_Ee-j0Y_sc8KBGw" entityName="customerService.deleteRecipe(customerService.getEmail(),UUID.fromString(id))" predecessor_AbstractAction="_rhH5NCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgMSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhIgMSM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Recipe deleted&quot;)" predecessor_AbstractAction="_rhIgMCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhIgMiM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Recipe deleted&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Recipe deleted&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhIgMiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhIgMSM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSBRyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend 2">
-    <assemblyContexts__ComposedStructure id="_1oTPaiM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1npvKiM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oTPbCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1njojSM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oT2ciM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1n5mwyM9Ee-Y9K8ooYAGaA"/>
-    <assemblyContexts__ComposedStructure id="_1oT2eCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1njokSM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVEkiM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2eCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPaiM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1npvKSM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1njokCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVElCM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2ciM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPbCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1njojCM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1n5mwiM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_1oVroSM9Ee-Y9K8ooYAGaA" requiringAssemblyContext_AssemblyConnector="_1oT2eCM9Ee-Y9K8ooYAGaA" providingAssemblyContext_AssemblyConnector="_1oTPbCM9Ee-Y9K8ooYAGaA" providedRole_AssemblyConnector="_1njojCM9Ee-Y9K8ooYAGaA" requiredRole_AssemblyConnector="_1njojyM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWSsSM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1njojiM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSBRiM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oT2eCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWStCM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1n5mwSM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSBRSM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oT2ciM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSBRSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbstSM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSBRiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_1nbsuSM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_riw37iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riw37SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository Provider" providedInterface__OperationProvidedRole="_riJz6yM_Ee-j0Y_sc8KBGw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSoUSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_exception_ExceptionController">
-    <assemblyContexts__ComposedStructure id="_1oTPbiM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1oA7hSM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWStiM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1oA7hCM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSoUCM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oTPbiM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSoUCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/error Provider" providedInterface__OperationProvidedRole="_1nbsuiM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_riw38SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_BaseController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riw37yM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/test[GET] Provider" providedInterface__OperationProvidedRole="_riJz4CM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_riw38CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/[GET] Provider" providedInterface__OperationProvidedRole="_riJz5yM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhEOxyM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rba5wyM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhEOxCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhEOxSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhEOxSM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Hello World!&quot;)" predecessor_AbstractAction="_rhEOxCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhEOxiM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello World!&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello World!&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhEOxiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhEOxSM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhEOwiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbZEkCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhByhCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhDnsSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhDnsSM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhByhCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhEOwCM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhDAoCM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhDnsCM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhCZkCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhCZkSM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhCZkSM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Hello World!&quot;)" predecessor_AbstractAction="_rhCZkCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhCZkiM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello World!&quot;)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello World!&quot;)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhCZkiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhCZkSM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(authentication.getTokenAttributes().get(&quot;email&quot;) == null)"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhEOwCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)" predecessor_AbstractAction="_rhDnsSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhEOwSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Hello &quot; + authentication.getTokenAttributes().get(&quot;email&quot;) + &quot;!&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhEOwSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhEOwCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSoUyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_CustomerController">
-    <assemblyContexts__ComposedStructure id="_1oTPZiM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1npvLCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWStyM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1npvKyM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSoUiM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oTPZiM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSoUiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user Provider" providedInterface__OperationProvidedRole="_1nbstCM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri4MqyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri4MqiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository Provider" providedInterface__OperationProvidedRole="_riJz5iM_Ee-j0Y_sc8KBGw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_1oSoViM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_BaseController">
-    <assemblyContexts__ComposedStructure id="_1oT2dCM9Ee-Y9K8ooYAGaA" encapsulatedComponent__AssemblyContext="_1n9RIiM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWSsCM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1n9RICM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSoVSM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oT2dCM9Ee-Y9K8ooYAGaA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_1oWSuCM9Ee-Y9K8ooYAGaA" innerProvidedRole_ProvidedDelegationConnector="_1n9RISM9Ee-Y9K8ooYAGaA" outerProvidedRole_ProvidedDelegationConnector="_1oSoVCM9Ee-Y9K8ooYAGaA" assemblyContext_ProvidedDelegationConnector="_1oT2dCM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSoVCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/[GET] Provider" providedInterface__OperationProvidedRole="_1nbssSM9Ee-Y9K8ooYAGaA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1oSoVSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/test[GET] Provider" providedInterface__OperationProvidedRole="_1nbssCM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri4MrSM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri4MrCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository Provider" providedInterface__OperationProvidedRole="_riJz6SM_Ee-j0Y_sc8KBGw"/>
   </components__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbssCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/test[GET]">
-    <signatures__OperationInterface id="_1gJY8yM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/test[GET]" returnType__OperationSignature="_1gIK0CM9Ee-Y9K8ooYAGaA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri4MryM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri4MriM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository Provider" providedInterface__OperationProvidedRole="_riJz6CM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri4MsSM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri4MsCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Provider" providedInterface__OperationProvidedRole="_riJz4yM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri4MsyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_exception_ExceptionController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri4MsiM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/error Provider" providedInterface__OperationProvidedRole="_riJz4SM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhBygiM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbYdhCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rb73ISM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhBygCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhBygCM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)" predecessor_AbstractAction="_rb73ISM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhBygSM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).body(&quot;Page not found&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhBygSM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhBygCM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri8eGCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_service_CustomerService">
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ri8eFiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_riJz4iM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ri8eFyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository Consumer" requiredInterface__OperationRequiredRole="_riJz4yM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ri8eGyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_units_UnitController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ri8eGSM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7iM_Ee-j0Y_sc8KBGw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ri8eGiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository Consumer" requiredInterface__OperationRequiredRole="_riJz6CM_Ee-j0Y_sc8KBGw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhHSHSM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbX2ciM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhHSGiM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhHSGyM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhHSGyM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(unitRepository.findAll())" predecessor_AbstractAction="_rhHSGiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSHCM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(unitRepository.findAll())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(unitRepository.findAll())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhHSHCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhHSGyM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhHSGSM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbX2cCM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhGrFCM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhHSFSM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhHSFSM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhGrFCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSFiM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhHSEiM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhHSFCM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhGrFSM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhHSECM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhHSECM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.NOT_FOUND).build()" predecessor_AbstractAction="_rhGrFSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSESM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.NOT_FOUND).build()"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.NOT_FOUND).build()"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhHSESM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhHSECM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(unit.isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhHSFiM_Ee-j0Y_sc8KBGw" entityName="unitRepository.delete(unit.get())" predecessor_AbstractAction="_rhHSFSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSFyM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhHSFyM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(&quot;Deleted&quot;)" predecessor_AbstractAction="_rhHSFiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhHSGCM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(&quot;Deleted&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(&quot;Deleted&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhHSGCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhHSFyM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rhGrEyM_Ee-j0Y_sc8KBGw" describedService__SEFF="_rbXPYiM_Ee-j0Y_sc8KBGw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rhGrASM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhGrCCM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhGrCCM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhGrASM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrCSM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhGrBSM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhGrByM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhGrAiM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhGrAyM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGrAyM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.badRequest().build()" predecessor_AbstractAction="_rhGrAiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrBCM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.badRequest().build()"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.badRequest().build()"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhGrBCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGrAyM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(unit.name() == null || unit.name().isEmpty())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_rhGrCSM_Ee-j0Y_sc8KBGw" entityName="newUnit.setName(unit.name())" predecessor_AbstractAction="_rhGrCCM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrECM_Ee-j0Y_sc8KBGw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_rhGrECM_Ee-j0Y_sc8KBGw" entityName="If Branch" predecessor_AbstractAction="_rhGrCSM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrESM_Ee-j0Y_sc8KBGw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_rhGrDSM_Ee-j0Y_sc8KBGw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_rhGrDyM_Ee-j0Y_sc8KBGw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_rhGrCiM_Ee-j0Y_sc8KBGw" entityName="Start Action" successor_AbstractAction="_rhGrCyM_Ee-j0Y_sc8KBGw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGrCyM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.status(HttpStatus.CONFLICT).build()" predecessor_AbstractAction="_rhGrCiM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrDCM_Ee-j0Y_sc8KBGw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.status(HttpStatus.CONFLICT).build()"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.status(HttpStatus.CONFLICT).build()"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_rhGrDCM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGrCyM_Ee-j0Y_sc8KBGw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(found.isPresent())"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_rhGrESM_Ee-j0Y_sc8KBGw" entityName="ResponseEntity.ok(unitRepository.save(newUnit))" predecessor_AbstractAction="_rhGrECM_Ee-j0Y_sc8KBGw" successor_AbstractAction="_rhGrEiM_Ee-j0Y_sc8KBGw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ResponseEntity.ok(unitRepository.save(newUnit))"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ResponseEntity.ok(unitRepository.save(newUnit))"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rhGrEiM_Ee-j0Y_sc8KBGw" entityName="Stop Action" predecessor_AbstractAction="_rhGrESM_Ee-j0Y_sc8KBGw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFA8iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_BaseController">
+    <assemblyContexts__ComposedStructure id="_rjGPICM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_riw38SM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjJSYCM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_riw38CM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA8SM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPICM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjJSYiM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_riw37yM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA8CM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPICM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA8CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/test[GET] Provider" providedInterface__OperationProvidedRole="_riJz4CM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA8SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/[GET] Provider" providedInterface__OperationProvidedRole="_riJz5yM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFA9CM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend 3">
+    <assemblyContexts__ComposedStructure id="_rjGPFiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri8eGyM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPGCM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri4MryM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIEQCM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPFiM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPGCM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MriM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_ri8eGiM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjJSYyM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_ri8eGSM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA8yM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPFiM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA8yM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7iM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFA9yM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend 2">
+    <assemblyContexts__ComposedStructure id="_rjGPECM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_rii1diM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPFCM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_riw37iM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPJiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri4MrSM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjG2ICM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_riKa8iM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIEQyM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjG2ICM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPJiM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MrCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_riKa8SM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIERyM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPECM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPFCM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_riw37SM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_rii1dCM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIESSM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPECM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPJiM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MrCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_rii1dSM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjIrUSM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_rii1cyM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA9iM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPECM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjIrVCM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_riKa8CM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA9SM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjG2ICM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA9SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7SM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA9iM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz5SM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFA-SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_exception_ExceptionController">
+    <assemblyContexts__ComposedStructure id="_rjGPEiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri4MsyM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjJSYSM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_ri4MsiM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFA-CM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPEiM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFA-CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/error Provider" providedInterface__OperationProvidedRole="_riJz4SM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFoAiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend">
+    <assemblyContexts__ComposedStructure id="_rjFoBSM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_riOsbSM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPGiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_rint_yM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPHCM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri8eGCM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPHiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri4MqyM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjGPJCM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_riOscCM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjG2IiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ridV5SM_Ee-j0Y_sc8KBGw"/>
+    <assemblyContexts__ComposedStructure id="_rjG2JCM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_ri4MsSM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIEQSM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPHCM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjG2JCM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MsCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_ri8eFyM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIEQiM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPGiM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPHiM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MqiM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_rint_SM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIERCM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPGiM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjG2JCM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MsCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_rint_iM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIERSM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPJCM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjG2JCM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MsCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_riOsbyM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIERiM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjG2IiM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjGPHiM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_ri4MqiM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_ridV5CM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_rjIESCM_Ee-j0Y_sc8KBGw" requiringAssemblyContext_AssemblyConnector="_rjGPHCM_Ee-j0Y_sc8KBGw" providingAssemblyContext_AssemblyConnector="_rjFoBSM_Ee-j0Y_sc8KBGw" providedRole_AssemblyConnector="_riOsbCM_Ee-j0Y_sc8KBGw" requiredRole_AssemblyConnector="_ri8eFiM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjIrUCM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_ridV4yM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFoASM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjG2IiM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjIrUyM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_riOsbiM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFoACM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPJCM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFoACM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes Provider" providedInterface__OperationProvidedRole="_riJz6iM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFoASM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[GET,POST] Provider" providedInterface__OperationProvidedRole="_riJz7CM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_rjFoBCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_CustomerController">
+    <assemblyContexts__ComposedStructure id="_rjGPIiM_Ee-j0Y_sc8KBGw" encapsulatedComponent__AssemblyContext="_rinuASM_Ee-j0Y_sc8KBGw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_rjIrUiM_Ee-j0Y_sc8KBGw" innerProvidedRole_ProvidedDelegationConnector="_rinuACM_Ee-j0Y_sc8KBGw" outerProvidedRole_ProvidedDelegationConnector="_rjFoAyM_Ee-j0Y_sc8KBGw" assemblyContext_ProvidedDelegationConnector="_rjGPIiM_Ee-j0Y_sc8KBGw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rjFoAyM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user Provider" providedInterface__OperationProvidedRole="_riJz5CM_Ee-j0Y_sc8KBGw"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz4CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/test[GET]">
+    <signatures__OperationInterface id="_rba5wyM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/test[GET]" returnType__OperationSignature="_rbYdiCM_Ee-j0Y_sc8KBGw"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbssSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/[GET]">
-    <signatures__OperationInterface id="_1gIK0SM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/[GET]" returnType__OperationSignature="_1gIK0CM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gHjxSM9Ee-Y9K8ooYAGaA" parameterName="JwtAuthenticationToken" modifier__Parameter="in"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz4SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/error">
+    <signatures__OperationInterface id="_rbYdhCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/error" returnType__OperationSignature="_rbYdgyM_Ee-j0Y_sc8KBGw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz4iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz4yM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz5CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user">
+    <signatures__OperationInterface id="_rbWoVSM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user[GET]" returnType__OperationSignature="_rbWoVCM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rbWoUCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user/name[PUT]" returnType__OperationSignature="_rbWBQCM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbVaMiM_Ee-j0Y_sc8KBGw" parameterName="NameDTO" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbssiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_CustomerRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbssyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes">
-    <signatures__OperationInterface id="_1gMcQyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes/*/image[GET]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA">
+    <signatures__OperationInterface id="_rbVaMCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user/recipes[PUT]" returnType__OperationSignature="_rbUzJCM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbUzIyM_Ee-j0Y_sc8KBGw" parameterName="RecipeDTO" modifier__Parameter="in"/>
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gNDUSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes[POST]$2" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gNDUCM9Ee-Y9K8ooYAGaA" parameterName="RecipeDTO" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gL1MSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes/saisonal[GET]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gNDUyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes[GET]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gL1MyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes[DELETE]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gMcQSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes[POST]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
-      </parameters__OperationSignature>
-      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gL1NSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/recipes/recommended[GET]" returnType__OperationSignature="_1gL1MCM9Ee-Y9K8ooYAGaA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbstCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user">
-    <signatures__OperationInterface id="_1gNqZCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user/recipes[GET]" returnType__OperationSignature="_1gNqYyM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gNqYSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user[GET]" returnType__OperationSignature="_1gNqYCM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gORcyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user/recipes[DELETE]" returnType__OperationSignature="_1gORcCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gPfkSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user/name[PUT]" returnType__OperationSignature="_1gPfkCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gORdSM9Ee-Y9K8ooYAGaA" parameterName="NameDTO" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gORcSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/user/recipes[PUT]" returnType__OperationSignature="_1gORcCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gNDUCM9Ee-Y9K8ooYAGaA" parameterName="RecipeDTO" modifier__Parameter="in"/>
+    <signatures__OperationInterface id="_rbUzISM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user/recipes[GET]" returnType__OperationSignature="_rbUzICM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rbWoUiM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/user/recipes[DELETE]" returnType__OperationSignature="_rbUzJCM_Ee-j0Y_sc8KBGw">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbstSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST]">
-    <signatures__OperationInterface id="_1gKAAiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/tags[POST]" returnType__OperationSignature="_1gJY9iM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gKAASM9Ee-Y9K8ooYAGaA" parameterName="TagDTO" modifier__Parameter="in"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz5SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST]">
+    <signatures__OperationInterface id="_rbcH4iM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE]" returnType__OperationSignature="_rbbg1SM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameters__OperationSignature>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gJY9yM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/tags[GET]" returnType__OperationSignature="_1gJY9iM9Ee-Y9K8ooYAGaA"/>
+    <signatures__OperationInterface id="_rbcH5SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[POST]" returnType__OperationSignature="_rbbg1SM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbcH5CM_Ee-j0Y_sc8KBGw" parameterName="IngredientDTO" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbcH4CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/ingredients[GET]" returnType__OperationSignature="_rbbg1SM_Ee-j0Y_sc8KBGw"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbstiM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbstyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_RecipeRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsuCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsuSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE,GET,POST]">
-    <signatures__OperationInterface id="_1gFHgCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[POST]" returnType__OperationSignature="_1gEgcCM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gD5YCM9Ee-Y9K8ooYAGaA" parameterName="IngredientDTO" modifier__Parameter="in"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz5iM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz5yM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/[GET]">
+    <signatures__OperationInterface id="_rbZEkCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/[GET]" returnType__OperationSignature="_rbYdiCM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbYdhyM_Ee-j0Y_sc8KBGw" parameterName="JwtAuthenticationToken" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gHjwiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[GET]" returnType__OperationSignature="_1gEgcCM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gHjwCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/ingredients[DELETE]" returnType__OperationSignature="_1gEgcCM9Ee-Y9K8ooYAGaA">
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz6CM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz6SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_tag_TagRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz6iM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes">
+    <signatures__OperationInterface id="_rbZroyM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes[GET]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rbZElCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes/saisonal[GET]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rbaSsCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes/*/image[GET]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbaSsiM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes[DELETE]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbZEliM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes/recommended[GET]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rba5wCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes[POST]$2" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbUzIyM_Ee-j0Y_sc8KBGw" parameterName="RecipeDTO" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbZroSM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/recipes[POST]" returnType__OperationSignature="_rbZEkyM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
+      </parameters__OperationSignature>
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsuiM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/error">
-    <signatures__OperationInterface id="_1gIx5iM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/error" returnType__OperationSignature="_1gIx5SM9Ee-Y9K8ooYAGaA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsuyM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_UnitRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsvCM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[GET,POST]">
-    <signatures__OperationInterface id="_1gIK1SM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[GET]" returnType__OperationSignature="_1gIK1CM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gIx4iM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[POST]" returnType__OperationSignature="_1gIK1CM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gIx4SM9Ee-Y9K8ooYAGaA" parameterName="MultipartFile" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gIK1yM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/images[GET]$2" returnType__OperationSignature="_1gIK1CM9Ee-Y9K8ooYAGaA">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz6yM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_repository_IngredientRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz7CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[GET,POST]">
+    <signatures__OperationInterface id="_ratvICM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[GET]$2" returnType__OperationSignature="_raqr0CM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rar58CM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[GET]" returnType__OperationSignature="_raqr0CM_Ee-j0Y_sc8KBGw">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsvSM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST]">
-    <signatures__OperationInterface id="_1gKnESM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[GET]" returnType__OperationSignature="_1gKnECM9Ee-Y9K8ooYAGaA"/>
-    <signatures__OperationInterface id="_1gLOICM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[POST]" returnType__OperationSignature="_1gKnECM9Ee-Y9K8ooYAGaA">
-      <parameters__OperationSignature dataType__Parameter="_1gKnFSM9Ee-Y9K8ooYAGaA" parameterName="UnitDTO" modifier__Parameter="in"/>
+    <signatures__OperationInterface id="_ratvIyM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/images[POST]" returnType__OperationSignature="_raqr0CM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_ratvIiM_Ee-j0Y_sc8KBGw" parameterName="MultipartFile" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_1gKnEyM9Ee-Y9K8ooYAGaA" entityName="SPRING-APPLICATION/api/v1/units[DELETE]" returnType__OperationSignature="_1gKnECM9Ee-Y9K8ooYAGaA">
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz7SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/tags[GET,POST]">
+    <signatures__OperationInterface id="_rba5yCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/tags[POST]" returnType__OperationSignature="_rba5xyM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rba5xiM_Ee-j0Y_sc8KBGw" parameterName="TagDTO" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbbg0SM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/tags[GET]" returnType__OperationSignature="_rba5xyM_Ee-j0Y_sc8KBGw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_riJz7iM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[DELETE,GET,POST]">
+    <signatures__OperationInterface id="_rbX2ciM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[GET]" returnType__OperationSignature="_rbXPYSM_Ee-j0Y_sc8KBGw"/>
+    <signatures__OperationInterface id="_rbX2cCM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[DELETE]" returnType__OperationSignature="_rbXPYSM_Ee-j0Y_sc8KBGw">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
+    <signatures__OperationInterface id="_rbXPYiM_Ee-j0Y_sc8KBGw" entityName="SPRING-APPLICATION/api/v1/units[POST]" returnType__OperationSignature="_rbXPYSM_Ee-j0Y_sc8KBGw">
+      <parameters__OperationSignature dataType__Parameter="_rbXPYCM_Ee-j0Y_sc8KBGw" parameterName="UnitDTO" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_1nbsviM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_repository_ImageRepository"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gD5YCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_IngredientDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gEgcCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_ingredients_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gHjxSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_JwtAuthenticationToken"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gIK0CM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gIK1CM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gIx4SM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_MultipartFile"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gIx5SM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_exception_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gJY9iM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_tag_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gKAASM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_TagDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gKnECM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_units_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gKnFSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_UnitDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gL1MCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_recipe_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gNDUCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_RecipeDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gNqYCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_CustomerDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gNqYyM9Ee-Y9K8ooYAGaA" entityName="java_util_List"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gORcCM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gORdSM9Ee-Y9K8ooYAGaA" entityName="edu_kit_recipe_recipebackend_dto_NameDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_1gPfkCM9Ee-Y9K8ooYAGaA" entityName="Void"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_raqr0CM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_ratvIiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_image_MultipartFile"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbUzICM_Ee-j0Y_sc8KBGw" entityName="java_util_List"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbUzIyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_RecipeDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbUzJCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_user_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbVaMiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_NameDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbWBQCM_Ee-j0Y_sc8KBGw" entityName="Void"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbWoVCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_CustomerDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbXPYCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_UnitDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbXPYSM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_units_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbYdgyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_exception_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbYdhyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_JwtAuthenticationToken"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbYdiCM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbZEkyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_recipe_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rba5xiM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_TagDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rba5xyM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_tag_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbbg1SM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_controller_api_v1_ingredients_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_rbcH5CM_Ee-j0Y_sc8KBGw" entityName="edu_kit_recipe_recipebackend_dto_IngredientDTO"/>
 </repository:Repository>
