@@ -8,6 +8,11 @@ on:
         required: false
         default: "false"
         type: "string"
+      analyzeVulnerabilities:
+        description: "Analyze vulnerabilities (use snyk)"
+        required: false
+        default: "false"
+        type: "string"
 
   # Every day at 2:00.
   schedule:
@@ -96,10 +101,11 @@ jobs:
 
       - name: Run Retriever
         if: ${{ needs.collect_info.outputs.latest_version != env.current_version }}
-        uses: PalladioSimulator/Palladio-ReverseEngineering-Retriever@main
+        uses: FloBoJa/Palladio-ReverseEngineering-Retriever@main
         with:
           source_path: repo/${{ matrix.directory }}
           rules: ${{ env.rules }}
+          analyze_vulnerabilities: ${{ github.event.inputs.analyzeVulnerabilities }}
           benchmark: ${{ env.benchmark }}
           rules_path: ${{ env.rules_path }}
 
