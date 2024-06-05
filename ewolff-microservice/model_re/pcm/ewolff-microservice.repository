@@ -1,144 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_sNeBzCM_Ee-nh_2AC5kDVA">
-  <components__Repository xsi:type="repository:BasicComponent" id="_sMua4yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CustomerClient">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sMua4iM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CustomerClient Provider" providedInterface__OperationProvidedRole="_sMtz3SM_Ee-nh_2AC5kDVA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sMua6CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_web_CustomerController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sMua5CM_Ee-nh_2AC5kDVA" entityName="customer/*_html Provider" providedInterface__OperationProvidedRole="_sMtz0CM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sMua5SM_Ee-nh_2AC5kDVA" entityName="customer/list_html Provider" providedInterface__OperationProvidedRole="_sMua4CM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sMua5iM_Ee-nh_2AC5kDVA" entityName="customer/form_html Provider" providedInterface__OperationProvidedRole="_sMtz1SM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sMua5yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_sMtz4iM_Ee-nh_2AC5kDVA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLMJ0iM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFM2kCM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLLizSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLLiziM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_sLLiziM_Ee-nh_2AC5kDVA" entityName="customerRepository.deleteById(id)" predecessor_AbstractAction="_sLLizSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLMJ0CM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLMJ0CM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLLiziM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLMJ0SM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLMJ0SM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLMJ0CM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLLixyM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFMPgSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLLixCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLLixSM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLLixSM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())" predecessor_AbstractAction="_sLLixCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLLixiM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLLixiM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLLixSM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sM0hjCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFM2kiM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sM0hiiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sM0hiyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sM0hiyM_Ee-nh_2AC5kDVA" predecessor_AbstractAction="_sM0hiiM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLLizCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFZD0iM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLLiySM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLLiyiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLLiyiM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())" predecessor_AbstractAction="_sLLiySM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLLiyyM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLLiyyM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLLiyiM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLKUpiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFVZdSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLKUoyM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLKUpCM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLKUpCM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLKUoyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLKUpSM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLKUpSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLKUpCM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLKUoiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFVZcyM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sGDLISM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLKUoCM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLKUoCM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())" predecessor_AbstractAction="_sGDLISM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLKUoSM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLKUoSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLKUoCM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sM6BHiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_catalogstub_CatalogStub">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sM6BHSM_Ee-nh_2AC5kDVA" entityName="order/catalog Provider" providedInterface__OperationProvidedRole="_sMtz1yM_Ee-nh_2AC5kDVA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLN_ByM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFaR8iM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLN_BCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLN_BSM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLN_BSM_Ee-nh_2AC5kDVA" entityName="new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))" predecessor_AbstractAction="_sLN_BCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLN_BiM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLN_BiM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLN_BSM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLN_AyM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFZq5yM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLMJ1CM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLN_ACM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_sLN_ACM_Ee-nh_2AC5kDVA" entityName="If Branch" predecessor_AbstractAction="_sLMJ1CM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLN_ASM_Ee-nh_2AC5kDVA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_sLMw4CM_Ee-nh_2AC5kDVA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_sLNX8CM_Ee-nh_2AC5kDVA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_sLMJ1SM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLMJ1iM_Ee-nh_2AC5kDVA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLMJ1iM_Ee-nh_2AC5kDVA" entityName="new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)" predecessor_AbstractAction="_sLMJ1SM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLMJ1yM_Ee-nh_2AC5kDVA">
-              <localVariableUsages_SetVariableAction>
-                <variableCharacterisation_VariableUsage type="VALUE">
-                  <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)"/>
-                </variableCharacterisation_VariableUsage>
-                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)"/>
-                </namedReference__VariableUsage>
-              </localVariableUsages_SetVariableAction>
-            </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_sLMJ1yM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLMJ1iM_Ee-nh_2AC5kDVA"/>
-          </branchBehaviour_BranchTransition>
-          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(id != 1)"/>
-        </branches_Branch>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLN_ASM_Ee-nh_2AC5kDVA" entityName="new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)" predecessor_AbstractAction="_sLN_ACM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLN_AiM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLN_AiM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLN_ASM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sM9rfiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_customerstub_CustomerStub">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sM9rfSM_Ee-nh_2AC5kDVA" entityName="order/customer Provider" providedInterface__OperationProvidedRole="_sMtz1CM_Ee-nh_2AC5kDVA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLPNNiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sEbagCM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLPNMyM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLPNNCM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLPNNCM_Ee-nh_2AC5kDVA" entityName="new PagedModel&lt;Customer>(Arrays.asList(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;)),new PageMetadata(1,0,1))" predecessor_AbstractAction="_sLPNMyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLPNNSM_Ee-nh_2AC5kDVA">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_ohsBpiNBEe-pgp6J6kuhyw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_og7MoiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_customerstub_CustomerStub">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_og7MoSNBEe-pgp6J6kuhyw" entityName="order/customer Provider" providedInterface__OperationProvidedRole="_og6lmSNBEe-pgp6J6kuhyw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaJxCNBEe-pgp6J6kuhyw" describedService__SEFF="_oYWfcCNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJwSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaJwiNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaJwiNBEe-pgp6J6kuhyw" entityName="new PagedModel&lt;Customer>(Arrays.asList(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;)),new PageMetadata(1,0,1))" predecessor_AbstractAction="_ofaJwSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaJwyNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new PagedModel&lt;Customer>(Arrays.asList(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;)),new PageMetadata(1,0,1))"/>
@@ -148,15 +14,15 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLPNNSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLPNNCM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaJwyNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaJwiNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLP0OiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sEd2wSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLP0MCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLP0NyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_sLP0NyM_Ee-nh_2AC5kDVA" entityName="If Branch" predecessor_AbstractAction="_sLP0MCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0OCM_Ee-nh_2AC5kDVA">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_sLP0NCM_Ee-nh_2AC5kDVA" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_sLP0NiM_Ee-nh_2AC5kDVA">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_sLP0MSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLP0MiM_Ee-nh_2AC5kDVA"/>
-            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLP0MiM_Ee-nh_2AC5kDVA" entityName="new ResponseEntity&lt;Customer>(HttpStatus.NOT_FOUND)" predecessor_AbstractAction="_sLP0MSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0MyM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofawyCNBEe-pgp6J6kuhyw" describedService__SEFF="_oYZiwSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJxSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofawxSNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_ofawxSNBEe-pgp6J6kuhyw" entityName="If Branch" predecessor_AbstractAction="_ofaJxSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofawxiNBEe-pgp6J6kuhyw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_ofawwiNBEe-pgp6J6kuhyw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_ofawxCNBEe-pgp6J6kuhyw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJxiNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofawwCNBEe-pgp6J6kuhyw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofawwCNBEe-pgp6J6kuhyw" entityName="new ResponseEntity&lt;Customer>(HttpStatus.NOT_FOUND)" predecessor_AbstractAction="_ofaJxiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofawwSNBEe-pgp6J6kuhyw">
               <localVariableUsages_SetVariableAction>
                 <variableCharacterisation_VariableUsage type="VALUE">
                   <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Customer>(HttpStatus.NOT_FOUND)"/>
@@ -166,12 +32,12 @@
                 </namedReference__VariableUsage>
               </localVariableUsages_SetVariableAction>
             </steps_Behaviour>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_sLP0MyM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLP0MiM_Ee-nh_2AC5kDVA"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_ofawwSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofawwCNBEe-pgp6J6kuhyw"/>
           </branchBehaviour_BranchTransition>
           <branchCondition_GuardedBranchTransition specification="@position: Condition: if(id != 42)"/>
         </branches_Branch>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLP0OCM_Ee-nh_2AC5kDVA" entityName="new ResponseEntity&lt;Customer>(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;),HttpStatus.OK)" predecessor_AbstractAction="_sLP0NyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0OSM_Ee-nh_2AC5kDVA">
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofawxiNBEe-pgp6J6kuhyw" entityName="new ResponseEntity&lt;Customer>(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;),HttpStatus.OK)" predecessor_AbstractAction="_ofawxSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofawxyNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Customer>(new Customer(42,&quot;Eberhard&quot;,&quot;Wolff&quot;,&quot;eberhard.wolff@gmail.com&quot;,&quot;Unter den Linden&quot;,&quot;Berlin&quot;),HttpStatus.OK)"/>
@@ -181,26 +47,41 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLP0OSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLP0OCM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofawxyNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofawxiNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNBV2SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_CatalogApp">
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNBV2CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_ItemRepository Consumer" requiredInterface__OperationRequiredRole="_sMtz0yM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohAFISNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CustomerClient">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFICNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CustomerClient Provider" providedInterface__OperationProvidedRole="_og6lkCNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNBV5CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV2iM_Ee-nh_2AC5kDVA" entityName="order/ Provider" providedInterface__OperationProvidedRole="_sMtz3iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV2yM_Ee-nh_2AC5kDVA" entityName="order/$4 Provider" providedInterface__OperationProvidedRole="_sMtz3CM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV3CM_Ee-nh_2AC5kDVA" entityName="order/$3 Provider" providedInterface__OperationProvidedRole="_sMtz1iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV3SM_Ee-nh_2AC5kDVA" entityName="order/$2 Provider" providedInterface__OperationProvidedRole="_sMtz0iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV3iM_Ee-nh_2AC5kDVA" entityName="order/line Provider" providedInterface__OperationProvidedRole="_sMtz2yM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNBV3yM_Ee-nh_2AC5kDVA" entityName="order/form_html Provider" providedInterface__OperationProvidedRole="_sMtz2SM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNBV4CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderRepository Consumer" requiredInterface__OperationRequiredRole="_sMua4SM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNBV4SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CustomerClient Consumer" requiredInterface__OperationRequiredRole="_sMtz3SM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNBV4iM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CatalogClient Consumer" requiredInterface__OperationRequiredRole="_sMtz2CM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNBV4yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderService Consumer" requiredInterface__OperationRequiredRole="_sMtz4CM_Ee-nh_2AC5kDVA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLQbQiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFWAgiM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLP0RyM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLQbQCM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLQbQCM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;order&quot;,&quot;order&quot;,orderRepository.findById(id).get())" predecessor_AbstractAction="_sLP0RyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLQbQSM_Ee-nh_2AC5kDVA">
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohAFLCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFIiNBEe-pgp6J6kuhyw" entityName="order/$2 Provider" providedInterface__OperationProvidedRole="_og6llCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFIyNBEe-pgp6J6kuhyw" entityName="order/ Provider" providedInterface__OperationProvidedRole="_og6llSNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFJCNBEe-pgp6J6kuhyw" entityName="order/form_html Provider" providedInterface__OperationProvidedRole="_og6lkiNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFJSNBEe-pgp6J6kuhyw" entityName="order/line Provider" providedInterface__OperationProvidedRole="_og6lkyNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFJiNBEe-pgp6J6kuhyw" entityName="order/$4 Provider" providedInterface__OperationProvidedRole="_og6lkSNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohAFJyNBEe-pgp6J6kuhyw" entityName="order/$3 Provider" providedInterface__OperationProvidedRole="_og5-gyNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohAFKCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderService Consumer" requiredInterface__OperationRequiredRole="_og5-hSNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohAFKSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CatalogClient Consumer" requiredInterface__OperationRequiredRole="_og6lnSNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohAFKiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderRepository Consumer" requiredInterface__OperationRequiredRole="_og7MoCNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohAFKyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CustomerClient Consumer" requiredInterface__OperationRequiredRole="_og6lkCNBEe-pgp6J6kuhyw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaw0yNBEe-pgp6J6kuhyw" describedService__SEFF="_oZSTlSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofawzyNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaw0CNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_ofaw0CNBEe-pgp6J6kuhyw" entityName="orderRepository.deleteById(id)" predecessor_AbstractAction="_ofawzyNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaw0SNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaw0SNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofaw0CNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaw0iNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaw0iNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaw0SNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaw2CNBEe-pgp6J6kuhyw" describedService__SEFF="_oZSTkiNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaw1SNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaw1iNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaw1iNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;order&quot;,&quot;order&quot;,orderRepository.findById(id).get())" predecessor_AbstractAction="_ofaw1SNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaw1yNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;order&quot;,&quot;order&quot;,orderRepository.findById(id).get())"/>
@@ -210,69 +91,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLQbQSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLQbQCM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaw1yNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaw1iNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLQbUiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFX1sSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLQbTyM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLQbUCM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLQbUCM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLQbTyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLQbUSM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLQbUSM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLQbUCM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLQbTSM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFXOpSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLQbSiM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLQbSyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLQbSyM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())" predecessor_AbstractAction="_sLQbSiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLQbTCM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLQbTCM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLQbSyM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLP0RSM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFWnkCM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLP0QSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLP0QiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_sLP0QiM_Ee-nh_2AC5kDVA" entityName="orderRepository.deleteById(id)" predecessor_AbstractAction="_sLP0QSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0QyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLP0QyM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLP0QiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0RCM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLP0RCM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLP0QyM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLQbSCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFWnliM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLQbRCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLQbRSM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_sLQbRSM_Ee-nh_2AC5kDVA" entityName="order.addLine(0,catalogClient.findAll().iterator().next().getItemId())" predecessor_AbstractAction="_sLQbRCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLQbRiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLQbRiM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)" predecessor_AbstractAction="_sLQbRSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLQbRyM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLQbRyM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLQbRiM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLP0PyM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFZq4yM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLP0PCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLP0PSM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLP0PSM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,new Order())" predecessor_AbstractAction="_sLP0PCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLP0PiM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofawzSNBEe-pgp6J6kuhyw" describedService__SEFF="_oZVW5yNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofawyiNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofawyyNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofawyyNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,new Order())" predecessor_AbstractAction="_ofawyiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofawzCNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,new Order())"/>
@@ -282,25 +105,26 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLP0PiM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLP0PSM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofawzCNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofawyyNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNLG3iM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLG3SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderRepository Provider" providedInterface__OperationProvidedRole="_sMua4SM_Ee-nh_2AC5kDVA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNLG4CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLG3yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerRepository Provider" providedInterface__OperationProvidedRole="_sMtz4iM_Ee-nh_2AC5kDVA"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNLt5CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_web_CatalogController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLG4SM_Ee-nh_2AC5kDVA" entityName="catalog/form_html Provider" providedInterface__OperationProvidedRole="_sMtz4yM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLG4iM_Ee-nh_2AC5kDVA" entityName="catalog/searchForm_html Provider" providedInterface__OperationProvidedRole="_sMtz2iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLt4CM_Ee-nh_2AC5kDVA" entityName="catalog/list_html Provider" providedInterface__OperationProvidedRole="_sMtz4SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLt4SM_Ee-nh_2AC5kDVA" entityName="catalog/searchByName_html Provider" providedInterface__OperationProvidedRole="_sMtz0SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNLt4iM_Ee-nh_2AC5kDVA" entityName="catalog/*_html Provider" providedInterface__OperationProvidedRole="_sMtz3yM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNLt4yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_ItemRepository Consumer" requiredInterface__OperationRequiredRole="_sMtz0yM_Ee-nh_2AC5kDVA"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLPNMSM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFUyYyM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLPNLiM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLPNLyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLPNLyM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLPNLiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLPNMCM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofbX1SNBEe-pgp6J6kuhyw" describedService__SEFF="_oZS6oiNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofbX0SNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofbX0iNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_ofbX0iNBEe-pgp6J6kuhyw" entityName="order.addLine(0,catalogClient.findAll().iterator().next().getItemId())" predecessor_AbstractAction="_ofbX0SNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofbX0yNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofbX0yNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)" predecessor_AbstractAction="_ofbX0iNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofbX1CNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;orderForm&quot;,&quot;order&quot;,order)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofbX1CNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofbX0yNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofbX3yNBEe-pgp6J6kuhyw" describedService__SEFF="_oZThtiNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofbX3CNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofbX3SNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofbX3SNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofbX3CNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofbX3iNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
@@ -310,25 +134,123 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLPNMCM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLPNLyM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofbX3iNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofbX3SNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLPNLSM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFVZcCM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLPNKiM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLPNKyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLPNKyM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())" predecessor_AbstractAction="_sLPNKiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLPNLCM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofbX2iNBEe-pgp6J6kuhyw" describedService__SEFF="_oZThsCNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofbX1yNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofbX2CNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofbX2CNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())" predecessor_AbstractAction="_ofbX1yNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofbX2SNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())"/>
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())"/>
           </variableCharacterisation_VariableUsage>
           <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())"/>
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;orderlist&quot;,&quot;orders&quot;,orderRepository.findAll())"/>
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLPNLCM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLPNKyM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofbX2SNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofbX2CNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLOmHCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFZq4CM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLOmGSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLOmGiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLOmGiM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;searchForm&quot;)" predecessor_AbstractAction="_sLOmGSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmGyM_Ee-nh_2AC5kDVA">
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohLrXiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_ItemRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohLrXSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_ItemRepository Provider" providedInterface__OperationProvidedRole="_og6llyNBEe-pgp6J6kuhyw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohLrYCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CatalogClient">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohLrXyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CatalogClient Provider" providedInterface__OperationProvidedRole="_og6lnSNBEe-pgp6J6kuhyw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohMSYSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_web_CustomerController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohLrYSNBEe-pgp6J6kuhyw" entityName="customer/list_html Provider" providedInterface__OperationProvidedRole="_og5-hiNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohLrYiNBEe-pgp6J6kuhyw" entityName="customer/form_html Provider" providedInterface__OperationProvidedRole="_og5-gCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohLrYyNBEe-pgp6J6kuhyw" entityName="customer/*_html Provider" providedInterface__OperationProvidedRole="_og6lliNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohMSYCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_og6lmiNBEe-pgp6J6kuhyw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofWfXSNBEe-pgp6J6kuhyw" describedService__SEFF="_oZVW4CNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofWfWiNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofWfWyNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofWfWyNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())" predecessor_AbstractAction="_ofWfWiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofWfXCNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customerlist&quot;,&quot;customers&quot;,customerRepository.findAll())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofWfXCNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofWfWyNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofVRNiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZRshSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofVRMyNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofVRNCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofVRNCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofVRMyNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofVRNSNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofVRNSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofVRNCNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofVRMiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZRsgyNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_oZ8a4SNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofVRMCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofVRMCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())" predecessor_AbstractAction="_oZ8a4SNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofVRMSNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,new Customer())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofVRMSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofVRMCNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ohTAHCNBEe-pgp6J6kuhyw" describedService__SEFF="_oZGtYyNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ohTAGiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ohTAGyNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ohTAGyNBEe-pgp6J6kuhyw" predecessor_AbstractAction="_ohTAGiNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofWfWCNBEe-pgp6J6kuhyw" describedService__SEFF="_oZGGUSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofWfVSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofWfViNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofWfViNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())" predecessor_AbstractAction="_ofWfVSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofWfVyNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;customer&quot;,&quot;customer&quot;,customerRepository.findById(id).get())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofWfVyNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofWfViNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofXGYiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZGtYSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofWfXiNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofWfXyNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_ofWfXyNBEe-pgp6J6kuhyw" entityName="customerRepository.deleteById(id)" predecessor_AbstractAction="_ofWfXiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofXGYCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofXGYCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofWfXyNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofXGYSNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofXGYSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofXGYCNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohWqdyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqdiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerRepository Provider" providedInterface__OperationProvidedRole="_og6lmiNBEe-pgp6J6kuhyw"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohWqfiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_web_CatalogController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqeCNBEe-pgp6J6kuhyw" entityName="catalog/searchForm_html Provider" providedInterface__OperationProvidedRole="_og6lmCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqeSNBEe-pgp6J6kuhyw" entityName="catalog/searchByName_html Provider" providedInterface__OperationProvidedRole="_og6lmyNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqeiNBEe-pgp6J6kuhyw" entityName="catalog/*_html Provider" providedInterface__OperationProvidedRole="_og6lnCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqeyNBEe-pgp6J6kuhyw" entityName="catalog/form_html Provider" providedInterface__OperationProvidedRole="_og5-giNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohWqfCNBEe-pgp6J6kuhyw" entityName="catalog/list_html Provider" providedInterface__OperationProvidedRole="_og5-gSNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohWqfSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_ItemRepository Consumer" requiredInterface__OperationRequiredRole="_og6llyNBEe-pgp6J6kuhyw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofZirCNBEe-pgp6J6kuhyw" describedService__SEFF="_oZVW5CNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofZiqSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofZiqiNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofZiqiNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;searchForm&quot;)" predecessor_AbstractAction="_ofZiqSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZiqyNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;searchForm&quot;)"/>
@@ -338,25 +260,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLOmGyM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLOmGiM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofZiqyNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofZiqiNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLOmEiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFXOoiM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLN_CSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLOmECM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLOmECM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())" predecessor_AbstractAction="_sLN_CSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmESM_Ee-nh_2AC5kDVA">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLOmESM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLOmECM_Ee-nh_2AC5kDVA"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLPNKCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFaR9SM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLPNJSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLPNJiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLPNJiM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findByNameContaining(query))" predecessor_AbstractAction="_sLPNJSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLPNJyM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaJtiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZWlACNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJsyNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaJtCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaJtCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findByNameContaining(query))" predecessor_AbstractAction="_ofaJsyNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaJtSNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findByNameContaining(query))"/>
@@ -366,11 +274,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLPNJyM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLPNJiM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaJtSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaJtCNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLOmFyM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFX1tCM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLOmFCM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLOmFSM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLOmFSM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,itemRepository.findById(id).get())" predecessor_AbstractAction="_sLOmFCM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmFiM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofZipyNBEe-pgp6J6kuhyw" describedService__SEFF="_oZUIwiNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofZipCNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofZipSNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofZipSNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,itemRepository.findById(id).get())" predecessor_AbstractAction="_ofZipCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZipiNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;item&quot;,&quot;item&quot;,itemRepository.findById(id).get())"/>
@@ -380,13 +288,13 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLOmFiM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLOmFSM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofZipiNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofZipSNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sLOmIiM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFX1tiM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sLOmHSM_Ee-nh_2AC5kDVA" entityName="Start Action" successor_AbstractAction="_sLOmHiM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_sLOmHiM_Ee-nh_2AC5kDVA" entityName="item.setId(id)" predecessor_AbstractAction="_sLOmHSM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmHyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_sLOmHyM_Ee-nh_2AC5kDVA" entityName="itemRepository.save(item)" predecessor_AbstractAction="_sLOmHiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmICM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_sLOmICM_Ee-nh_2AC5kDVA" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_sLOmHyM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sLOmISM_Ee-nh_2AC5kDVA">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofZisiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZUIxCNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofZirSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofZiriNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_ofZiriNBEe-pgp6J6kuhyw" entityName="item.setId(id)" predecessor_AbstractAction="_ofZirSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZiryNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_ofZiryNBEe-pgp6J6kuhyw" entityName="itemRepository.save(item)" predecessor_AbstractAction="_ofZiriNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZisCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofZisCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofZiryNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZisSNBEe-pgp6J6kuhyw">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
@@ -396,221 +304,313 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sLOmISM_Ee-nh_2AC5kDVA" entityName="Stop Action" predecessor_AbstractAction="_sLOmICM_Ee-nh_2AC5kDVA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofZisSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofZisCNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_sNZwXCM_Ee-nh_2AC5kDVA" describedService__SEFF="_sFYcwSM_Ee-nh_2AC5kDVA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_sNZwWiM_Ee-nh_2AC5kDVA" successor_AbstractAction="_sNZwWyM_Ee-nh_2AC5kDVA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_sNZwWyM_Ee-nh_2AC5kDVA" predecessor_AbstractAction="_sNZwWiM_Ee-nh_2AC5kDVA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ohfNXCNBEe-pgp6J6kuhyw" describedService__SEFF="_oZUIxiNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ohfNWiNBEe-pgp6J6kuhyw" successor_AbstractAction="_ohfNWyNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ohfNWyNBEe-pgp6J6kuhyw" predecessor_AbstractAction="_ohfNWiNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaJuyNBEe-pgp6J6kuhyw" describedService__SEFF="_oZRsgCNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJuCNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaJuSNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaJuSNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())" predecessor_AbstractAction="_ofaJuCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaJuiNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;item&quot;,&quot;item&quot;,new Item())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaJuiNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaJuSNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofaJvyNBEe-pgp6J6kuhyw" describedService__SEFF="_oZRFdCNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofaJvCNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofaJvSNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofaJvSNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;success&quot;)" predecessor_AbstractAction="_ofaJvCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofaJviNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;success&quot;)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;success&quot;)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofaJviNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofaJvSNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofZioiNBEe-pgp6J6kuhyw" describedService__SEFF="_oZS6pSNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofY7mSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofZioCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofZioCNBEe-pgp6J6kuhyw" entityName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())" predecessor_AbstractAction="_ofY7mSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofZioSNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ModelAndView(&quot;itemlist&quot;,&quot;items&quot;,itemRepository.findAll())"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofZioSNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofZioCNBEe-pgp6J6kuhyw"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNZwXiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerApp">
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNZwXSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_sMtz4iM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohks7iNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderService">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohks6iNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderService Provider" providedInterface__OperationProvidedRole="_og5-hSNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohks6yNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CustomerClient Consumer" requiredInterface__OperationRequiredRole="_og6lkCNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohks7CNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderRepository Consumer" requiredInterface__OperationRequiredRole="_og7MoCNBEe-pgp6J6kuhyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohks7SNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CatalogClient Consumer" requiredInterface__OperationRequiredRole="_og6lnSNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNZwYCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_ItemRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNZwXyM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_ItemRepository Provider" providedInterface__OperationProvidedRole="_sMtz0yM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohks8CNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_catalogstub_CatalogStub">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohks7yNBEe-pgp6J6kuhyw" entityName="order/catalog Provider" providedInterface__OperationProvidedRole="_og5-hCNBEe-pgp6J6kuhyw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofY7kyNBEe-pgp6J6kuhyw" describedService__SEFF="_oZV98yNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofXGZCNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofY7kCNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_ofY7kCNBEe-pgp6J6kuhyw" entityName="If Branch" predecessor_AbstractAction="_ofXGZCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofY7kSNBEe-pgp6J6kuhyw">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_ofXtcCNBEe-pgp6J6kuhyw" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_ofYUgCNBEe-pgp6J6kuhyw">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_ofXGZSNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofXGZiNBEe-pgp6J6kuhyw"/>
+            <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofXGZiNBEe-pgp6J6kuhyw" entityName="new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)" predecessor_AbstractAction="_ofXGZSNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofXGZyNBEe-pgp6J6kuhyw">
+              <localVariableUsages_SetVariableAction>
+                <variableCharacterisation_VariableUsage type="VALUE">
+                  <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)"/>
+                </variableCharacterisation_VariableUsage>
+                <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+                  <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ResponseEntity&lt;Item>(HttpStatus.NOT_FOUND)"/>
+                </namedReference__VariableUsage>
+              </localVariableUsages_SetVariableAction>
+            </steps_Behaviour>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_ofXGZyNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofXGZiNBEe-pgp6J6kuhyw"/>
+          </branchBehaviour_BranchTransition>
+          <branchCondition_GuardedBranchTransition specification="@position: Condition: if(id != 1)"/>
+        </branches_Branch>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofY7kSNBEe-pgp6J6kuhyw" entityName="new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)" predecessor_AbstractAction="_ofY7kCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofY7kiNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new ResponseEntity&lt;Item>(new Item(1,&quot;iPod&quot;,42.0),HttpStatus.OK)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofY7kiNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofY7kSNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_ofY7lyNBEe-pgp6J6kuhyw" describedService__SEFF="_oZV99iNBEe-pgp6J6kuhyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_ofY7lCNBEe-pgp6J6kuhyw" entityName="Start Action" successor_AbstractAction="_ofY7lSNBEe-pgp6J6kuhyw"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_ofY7lSNBEe-pgp6J6kuhyw" entityName="new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))" predecessor_AbstractAction="_ofY7lCNBEe-pgp6J6kuhyw" successor_AbstractAction="_ofY7liNBEe-pgp6J6kuhyw">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new PagedModel&lt;Item>(Arrays.asList(new Item(1,&quot;iPod&quot;,42.0)),new PageMetadata(1,0,1))"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_ofY7liNBEe-pgp6J6kuhyw" entityName="Stop Action" predecessor_AbstractAction="_ofY7lSNBEe-pgp6J6kuhyw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNaXYyM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderService">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNZwYSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderService Provider" providedInterface__OperationProvidedRole="_sMtz4CM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNaXYCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CustomerClient Consumer" requiredInterface__OperationRequiredRole="_sMtz3SM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNaXYSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CatalogClient Consumer" requiredInterface__OperationRequiredRole="_sMtz2CM_Ee-nh_2AC5kDVA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_sNaXYiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderRepository Consumer" requiredInterface__OperationRequiredRole="_sMua4SM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohnwPiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohnwPSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderRepository Provider" providedInterface__OperationProvidedRole="_og7MoCNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_sNaXZSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CatalogClient">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNaXZCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CatalogClient Provider" providedInterface__OperationProvidedRole="_sMtz2CM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohnwQCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerApp">
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohnwPyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerRepository Consumer" requiredInterface__OperationRequiredRole="_og6lmiNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_sNczoCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_catalogstub_CatalogStub">
-    <assemblyContexts__ComposedStructure id="_sNeBxiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sM6BHiM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFESM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sM6BHSM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNcMkCM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeBxiM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNcMkCM_Ee-nh_2AC5kDVA" entityName="order/catalog Provider" providedInterface__OperationProvidedRole="_sMtz1yM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_ohnwQiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_CatalogApp">
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ohnwQSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_ItemRepository Consumer" requiredInterface__OperationRequiredRole="_og6llyNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_sNczpCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer">
-    <assemblyContexts__ComposedStructure id="_sNdatCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNLG4CM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNdauCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNZwXiM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNeByiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sMua6CM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNfP4CM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNeByiM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdatCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNLG3yM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sMua5yM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf29iM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdauCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdatCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNLG3yM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNZwXSM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNgeAiM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sMua5CM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczoyM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByiM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNgeAyM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sMua5SM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczoiM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByiM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFGSM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sMua5iM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczoSM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByiM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczoSM_Ee-nh_2AC5kDVA" entityName="customer/form_html Provider" providedInterface__OperationProvidedRole="_sMtz1SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczoiM_Ee-nh_2AC5kDVA" entityName="customer/list_html Provider" providedInterface__OperationProvidedRole="_sMua4CM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczoyM_Ee-nh_2AC5kDVA" entityName="customer/*_html Provider" providedInterface__OperationProvidedRole="_sMtz0CM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_ohqMcyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer">
+    <assemblyContexts__ComposedStructure id="_ohrakCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohnwQCNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohrakiNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohWqdyNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohralCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohMSYSNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPxyNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohralCNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohrakiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohWqdiNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohMSYCNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_oht20iNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohrakCNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohrakiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohWqdiNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohnwPyNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud4SNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohLrYyNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqMciNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohralCNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud6CNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohLrYSNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqMcSNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohralCNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud6iNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohLrYiNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqMcCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohralCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqMcCNBEe-pgp6J6kuhyw" entityName="customer/form_html Provider" providedInterface__OperationProvidedRole="_og5-gCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqMcSNBEe-pgp6J6kuhyw" entityName="customer/list_html Provider" providedInterface__OperationProvidedRole="_og5-hiNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqMciNBEe-pgp6J6kuhyw" entityName="customer/*_html Provider" providedInterface__OperationProvidedRole="_og6lliNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_sNczqiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog">
-    <assemblyContexts__ComposedStructure id="_sNdasCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNBV2SM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNdavCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNLt5CM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNeBwCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNZwYCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf28iM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdasCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNeBwCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNZwXyM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNBV2CM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf29SM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdavCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNeBwCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNZwXyM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNLt4yM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNgeASM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNLt4iM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczqCM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNdavCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFEiM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNLG4SM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczqSM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNdavCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFFSM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNLt4SM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczpiM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNdavCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFFiM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNLt4CM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczpSM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNdavCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFFyM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNLG4iM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczpyM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNdavCM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczpSM_Ee-nh_2AC5kDVA" entityName="catalog/list_html Provider" providedInterface__OperationProvidedRole="_sMtz4SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczpiM_Ee-nh_2AC5kDVA" entityName="catalog/searchByName_html Provider" providedInterface__OperationProvidedRole="_sMtz0SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczpyM_Ee-nh_2AC5kDVA" entityName="catalog/searchForm_html Provider" providedInterface__OperationProvidedRole="_sMtz2iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczqCM_Ee-nh_2AC5kDVA" entityName="catalog/*_html Provider" providedInterface__OperationProvidedRole="_sMtz3yM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczqSM_Ee-nh_2AC5kDVA" entityName="catalog/form_html Provider" providedInterface__OperationProvidedRole="_sMtz4yM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_ohqMdSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_customerstub_CustomerStub">
+    <assemblyContexts__ComposedStructure id="_ohraoCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_og7MoiNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud7CNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_og7MoSNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqMdCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraoCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqMdCNBEe-pgp6J6kuhyw" entityName="order/customer Provider" providedInterface__OperationProvidedRole="_og6lmSNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_sNczrCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_customerstub_CustomerStub">
-    <assemblyContexts__ComposedStructure id="_sNeBwiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sM9rfiM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNgeBCM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sM9rfSM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczqyM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeBwiM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczqyM_Ee-nh_2AC5kDVA" entityName="order/customer Provider" providedInterface__OperationProvidedRole="_sMtz1CM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_ohqzgSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_catalogstub_CatalogStub">
+    <assemblyContexts__ComposedStructure id="_ohramCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohks8CNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud4iNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohks7yNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzgCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohramCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzgCNBEe-pgp6J6kuhyw" entityName="order/catalog Provider" providedInterface__OperationProvidedRole="_og5-hCNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_sNczsyM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order">
-    <assemblyContexts__ComposedStructure id="_sNdasiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNLG3iM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNdatiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNaXZSM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNdauiM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNaXYyM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNeBxCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sMua4yM_Ee-nh_2AC5kDVA"/>
-    <assemblyContexts__ComposedStructure id="_sNeByCM_Ee-nh_2AC5kDVA" encapsulatedComponent__AssemblyContext="_sNBV5CM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNfP4SM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNeByCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdauiM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNZwYSM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNBV4yM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNfP4iM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdauiM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdasiM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNLG3SM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNaXYiM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNfP4yM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNeByCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNeBxCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sMua4iM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNBV4SM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf28CM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdauiM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNeBxCM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sMua4iM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNaXYCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf28SM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNdauiM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdatiM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNaXZCM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNaXYSM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf28yM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNeByCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdatiM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNaXZCM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNBV4iM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_sNf29CM_Ee-nh_2AC5kDVA" requiringAssemblyContext_AssemblyConnector="_sNeByCM_Ee-nh_2AC5kDVA" providingAssemblyContext_AssemblyConnector="_sNdasiM_Ee-nh_2AC5kDVA" providedRole_AssemblyConnector="_sNLG3SM_Ee-nh_2AC5kDVA" requiredRole_AssemblyConnector="_sNBV4CM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNgeACM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV3yM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczryM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFECM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV2iM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczsiM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFEyM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV3CM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczriM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFFCM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV2yM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczsSM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFGCM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV3iM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczsCM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_sNhFGiM_Ee-nh_2AC5kDVA" innerProvidedRole_ProvidedDelegationConnector="_sNBV3SM_Ee-nh_2AC5kDVA" outerProvidedRole_ProvidedDelegationConnector="_sNczrSM_Ee-nh_2AC5kDVA" assemblyContext_ProvidedDelegationConnector="_sNeByCM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczrSM_Ee-nh_2AC5kDVA" entityName="order/$2 Provider" providedInterface__OperationProvidedRole="_sMtz0iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczriM_Ee-nh_2AC5kDVA" entityName="order/$3 Provider" providedInterface__OperationProvidedRole="_sMtz1iM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczryM_Ee-nh_2AC5kDVA" entityName="order/form_html Provider" providedInterface__OperationProvidedRole="_sMtz2SM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczsCM_Ee-nh_2AC5kDVA" entityName="order/line Provider" providedInterface__OperationProvidedRole="_sMtz2yM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczsSM_Ee-nh_2AC5kDVA" entityName="order/$4 Provider" providedInterface__OperationProvidedRole="_sMtz3CM_Ee-nh_2AC5kDVA"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_sNczsiM_Ee-nh_2AC5kDVA" entityName="order/ Provider" providedInterface__OperationProvidedRole="_sMtz3iM_Ee-nh_2AC5kDVA"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_ohqzhyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog">
+    <assemblyContexts__ComposedStructure id="_ohramiNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohLrXiNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohranCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohnwQiNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohraniNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohWqfiNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPxSNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohraniNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohramiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohLrXSNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohWqfSNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_oht20SNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohranCNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohramiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohLrXSNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohnwQSNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud4yNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohWqeCNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzgyNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraniNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud5SNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohWqfCNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzhiNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraniNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud5yNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohWqeSNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzhSNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraniNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud7SNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohWqeiNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzgiNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraniNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud7yNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohWqeyNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzhCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraniNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzgiNBEe-pgp6J6kuhyw" entityName="catalog/*_html Provider" providedInterface__OperationProvidedRole="_og6lnCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzgyNBEe-pgp6J6kuhyw" entityName="catalog/searchForm_html Provider" providedInterface__OperationProvidedRole="_og6lmCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzhCNBEe-pgp6J6kuhyw" entityName="catalog/form_html Provider" providedInterface__OperationProvidedRole="_og5-giNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzhSNBEe-pgp6J6kuhyw" entityName="catalog/searchByName_html Provider" providedInterface__OperationProvidedRole="_og6lmyNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzhiNBEe-pgp6J6kuhyw" entityName="catalog/list_html Provider" providedInterface__OperationProvidedRole="_og5-gSNBEe-pgp6J6kuhyw"/>
   </components__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz0CM_Ee-nh_2AC5kDVA" entityName="customer/*_html">
-    <signatures__OperationInterface id="_sFM2kCM_Ee-nh_2AC5kDVA" entityName="customer/*_html$null" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA">
+  <components__Repository xsi:type="repository:CompositeComponent" id="_ohqzjiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order">
+    <assemblyContexts__ComposedStructure id="_ohraliNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohAFLCNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohraoiNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohLrYCNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohsBoCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohAFISNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohsBoiNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohks7iNBEe-pgp6J6kuhyw"/>
+    <assemblyContexts__ComposedStructure id="_ohsBpCNBEe-pgp6J6kuhyw" encapsulatedComponent__AssemblyContext="_ohnwPiNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPwCNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohsBoiNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohsBoCNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohAFICNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohks6yNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPwSNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohraliNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohsBpCNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohnwPSNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohAFKiNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPwiNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohsBoiNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohraoiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohLrXyNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohks7SNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPwyNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohraliNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohsBoiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohks6iNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohAFKCNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPxCNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohsBoiNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohsBpCNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohnwPSNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohks7CNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_ohtPxiNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohraliNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohraoiNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohLrXyNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohAFKSNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_oht20CNBEe-pgp6J6kuhyw" requiringAssemblyContext_AssemblyConnector="_ohraliNBEe-pgp6J6kuhyw" providingAssemblyContext_AssemblyConnector="_ohsBoCNBEe-pgp6J6kuhyw" providedRole_AssemblyConnector="_ohAFICNBEe-pgp6J6kuhyw" requiredRole_AssemblyConnector="_ohAFKyNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud4CNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFJSNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqziiNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud5CNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFIyNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqziCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud5iNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFIiNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzjCNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud6SNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFJyNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqzjSNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud6yNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFJiNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqziSNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_ohud7iNBEe-pgp6J6kuhyw" innerProvidedRole_ProvidedDelegationConnector="_ohAFJCNBEe-pgp6J6kuhyw" outerProvidedRole_ProvidedDelegationConnector="_ohqziyNBEe-pgp6J6kuhyw" assemblyContext_ProvidedDelegationConnector="_ohraliNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqziCNBEe-pgp6J6kuhyw" entityName="order/ Provider" providedInterface__OperationProvidedRole="_og6llSNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqziSNBEe-pgp6J6kuhyw" entityName="order/$4 Provider" providedInterface__OperationProvidedRole="_og6lkSNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqziiNBEe-pgp6J6kuhyw" entityName="order/line Provider" providedInterface__OperationProvidedRole="_og6lkyNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqziyNBEe-pgp6J6kuhyw" entityName="order/form_html Provider" providedInterface__OperationProvidedRole="_og6lkiNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzjCNBEe-pgp6J6kuhyw" entityName="order/$2 Provider" providedInterface__OperationProvidedRole="_og6llCNBEe-pgp6J6kuhyw"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ohqzjSNBEe-pgp6J6kuhyw" entityName="order/$3 Provider" providedInterface__OperationProvidedRole="_og5-gyNBEe-pgp6J6kuhyw"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-gCNBEe-pgp6J6kuhyw" entityName="customer/form_html">
+    <signatures__OperationInterface id="_oZRshSNBEe-pgp6J6kuhyw" entityName="customer/form_html$null" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature dataType__Parameter="_oZGGUyNBEe-pgp6J6kuhyw" parameterName="Customer" modifier__Parameter="in"/>
+      <parameters__OperationSignature dataType__Parameter="_oZGtYCNBEe-pgp6J6kuhyw" parameterName="HttpServletRequest" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_oZRsgyNBEe-pgp6J6kuhyw" entityName="customer/form_html" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-gSNBEe-pgp6J6kuhyw" entityName="catalog/list_html">
+    <signatures__OperationInterface id="_oZS6pSNBEe-pgp6J6kuhyw" entityName="catalog/list_html" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-giNBEe-pgp6J6kuhyw" entityName="catalog/form_html">
+    <signatures__OperationInterface id="_oZRsgCNBEe-pgp6J6kuhyw" entityName="catalog/form_html$null" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw"/>
+    <signatures__OperationInterface id="_oZRFdCNBEe-pgp6J6kuhyw" entityName="catalog/form_html" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature dataType__Parameter="_oZRFciNBEe-pgp6J6kuhyw" parameterName="Item" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-gyNBEe-pgp6J6kuhyw" entityName="order/$3">
+    <signatures__OperationInterface id="_oZThsCNBEe-pgp6J6kuhyw" entityName="order/$3" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-hCNBEe-pgp6J6kuhyw" entityName="order/catalog">
+    <signatures__OperationInterface id="_oZV98yNBEe-pgp6J6kuhyw" entityName="order/catalog" returnType__OperationSignature="_oZV98iNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
       </parameters__OperationSignature>
-      <parameters__OperationSignature dataType__Parameter="_sFMPgyM_Ee-nh_2AC5kDVA" parameterName="Customer" modifier__Parameter="in"/>
-      <parameters__OperationSignature dataType__Parameter="_sFMPhCM_Ee-nh_2AC5kDVA" parameterName="HttpServletRequest" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFMPgSM_Ee-nh_2AC5kDVA" entityName="customer/*_html" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
-      </parameters__OperationSignature>
+    <signatures__OperationInterface id="_oZV99iNBEe-pgp6J6kuhyw" entityName="order/catalog$2" returnType__OperationSignature="_oZV99SNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-hSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderService"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og5-hiNBEe-pgp6J6kuhyw" entityName="customer/list_html">
+    <signatures__OperationInterface id="_oZVW4CNBEe-pgp6J6kuhyw" entityName="customer/list_html" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lkCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CustomerClient"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lkSNBEe-pgp6J6kuhyw" entityName="order/$4">
+    <signatures__OperationInterface id="_oZThtiNBEe-pgp6J6kuhyw" entityName="order/$4" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature dataType__Parameter="_oZS6oSNBEe-pgp6J6kuhyw" parameterName="Order" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFM2kiM_Ee-nh_2AC5kDVA" entityName="customer/*_html$null" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA">
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lkiNBEe-pgp6J6kuhyw" entityName="order/form_html">
+    <signatures__OperationInterface id="_oZVW5yNBEe-pgp6J6kuhyw" entityName="order/form_html" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lkyNBEe-pgp6J6kuhyw" entityName="order/line">
+    <signatures__OperationInterface id="_oZS6oiNBEe-pgp6J6kuhyw" entityName="order/line" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature dataType__Parameter="_oZS6oSNBEe-pgp6J6kuhyw" parameterName="Order" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6llCNBEe-pgp6J6kuhyw" entityName="order/$2">
+    <signatures__OperationInterface id="_oZSTlSNBEe-pgp6J6kuhyw" entityName="order/$2" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz0SM_Ee-nh_2AC5kDVA" entityName="catalog/searchByName_html">
-    <signatures__OperationInterface id="_sFaR9SM_Ee-nh_2AC5kDVA" entityName="catalog/searchByName_html" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6llSNBEe-pgp6J6kuhyw" entityName="order/">
+    <signatures__OperationInterface id="_oZSTkiNBEe-pgp6J6kuhyw" entityName="order/" returnType__OperationSignature="_oZSTkSNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lliNBEe-pgp6J6kuhyw" entityName="customer/*_html">
+    <signatures__OperationInterface id="_oZGtYyNBEe-pgp6J6kuhyw" entityName="customer/*_html$null" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_oZGGUSNBEe-pgp6J6kuhyw" entityName="customer/*_html" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_oZGtYSNBEe-pgp6J6kuhyw" entityName="customer/*_html$null" returnType__OperationSignature="_oZGGUCNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
+      </parameters__OperationSignature>
+      <parameters__OperationSignature dataType__Parameter="_oZGGUyNBEe-pgp6J6kuhyw" parameterName="Customer" modifier__Parameter="in"/>
+      <parameters__OperationSignature dataType__Parameter="_oZGtYCNBEe-pgp6J6kuhyw" parameterName="HttpServletRequest" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6llyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_ItemRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lmCNBEe-pgp6J6kuhyw" entityName="catalog/searchForm_html">
+    <signatures__OperationInterface id="_oZVW5CNBEe-pgp6J6kuhyw" entityName="catalog/searchForm_html" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lmSNBEe-pgp6J6kuhyw" entityName="order/customer">
+    <signatures__OperationInterface id="_oYWfcCNBEe-pgp6J6kuhyw" entityName="order/customer" returnType__OperationSignature="_oYVRUCNBEe-pgp6J6kuhyw"/>
+    <signatures__OperationInterface id="_oYZiwSNBEe-pgp6J6kuhyw" entityName="order/customer$2" returnType__OperationSignature="_oYZiwCNBEe-pgp6J6kuhyw">
+      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lmiNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_CustomerRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lmyNBEe-pgp6J6kuhyw" entityName="catalog/searchByName_html">
+    <signatures__OperationInterface id="_oZWlACNBEe-pgp6J6kuhyw" entityName="catalog/searchByName_html" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz0iM_Ee-nh_2AC5kDVA" entityName="order/$2">
-    <signatures__OperationInterface id="_sFWnkCM_Ee-nh_2AC5kDVA" entityName="order/$2" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lnCNBEe-pgp6J6kuhyw" entityName="catalog/*_html">
+    <signatures__OperationInterface id="_oZUIwiNBEe-pgp6J6kuhyw" entityName="catalog/*_html" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz0yM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_ItemRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz1CM_Ee-nh_2AC5kDVA" entityName="order/customer">
-    <signatures__OperationInterface id="_sEbagCM_Ee-nh_2AC5kDVA" entityName="order/customer" returnType__OperationSignature="_sEaMYCM_Ee-nh_2AC5kDVA"/>
-    <signatures__OperationInterface id="_sEd2wSM_Ee-nh_2AC5kDVA" entityName="order/customer$2" returnType__OperationSignature="_sEd2wCM_Ee-nh_2AC5kDVA">
+    <signatures__OperationInterface id="_oZUIxCNBEe-pgp6J6kuhyw" entityName="catalog/*_html$null" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz1SM_Ee-nh_2AC5kDVA" entityName="customer/form_html">
-    <signatures__OperationInterface id="_sFVZdSM_Ee-nh_2AC5kDVA" entityName="customer/form_html$null" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature dataType__Parameter="_sFMPgyM_Ee-nh_2AC5kDVA" parameterName="Customer" modifier__Parameter="in"/>
-      <parameters__OperationSignature dataType__Parameter="_sFMPhCM_Ee-nh_2AC5kDVA" parameterName="HttpServletRequest" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFVZcyM_Ee-nh_2AC5kDVA" entityName="customer/form_html" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz1iM_Ee-nh_2AC5kDVA" entityName="order/$3">
-    <signatures__OperationInterface id="_sFXOpSM_Ee-nh_2AC5kDVA" entityName="order/$3" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz1yM_Ee-nh_2AC5kDVA" entityName="order/catalog">
-    <signatures__OperationInterface id="_sFaR8iM_Ee-nh_2AC5kDVA" entityName="order/catalog$2" returnType__OperationSignature="_sFaR8SM_Ee-nh_2AC5kDVA"/>
-    <signatures__OperationInterface id="_sFZq5yM_Ee-nh_2AC5kDVA" entityName="order/catalog" returnType__OperationSignature="_sFZq5iM_Ee-nh_2AC5kDVA">
+    <signatures__OperationInterface id="_oZUIxiNBEe-pgp6J6kuhyw" entityName="catalog/*_html$null" returnType__OperationSignature="_oZRFcyNBEe-pgp6J6kuhyw">
       <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
       </parameters__OperationSignature>
+      <parameters__OperationSignature dataType__Parameter="_oZRFciNBEe-pgp6J6kuhyw" parameterName="Item" modifier__Parameter="in"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz2CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CatalogClient"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz2SM_Ee-nh_2AC5kDVA" entityName="order/form_html">
-    <signatures__OperationInterface id="_sFZq4yM_Ee-nh_2AC5kDVA" entityName="order/form_html" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz2iM_Ee-nh_2AC5kDVA" entityName="catalog/searchForm_html">
-    <signatures__OperationInterface id="_sFZq4CM_Ee-nh_2AC5kDVA" entityName="catalog/searchForm_html" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz2yM_Ee-nh_2AC5kDVA" entityName="order/line">
-    <signatures__OperationInterface id="_sFWnliM_Ee-nh_2AC5kDVA" entityName="order/line" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature dataType__Parameter="_sFWnlSM_Ee-nh_2AC5kDVA" parameterName="Order" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz3CM_Ee-nh_2AC5kDVA" entityName="order/$4">
-    <signatures__OperationInterface id="_sFX1sSM_Ee-nh_2AC5kDVA" entityName="order/$4" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature dataType__Parameter="_sFWnlSM_Ee-nh_2AC5kDVA" parameterName="Order" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz3SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_clients_CustomerClient"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz3iM_Ee-nh_2AC5kDVA" entityName="order/">
-    <signatures__OperationInterface id="_sFWAgiM_Ee-nh_2AC5kDVA" entityName="order/" returnType__OperationSignature="_sFWAgSM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz3yM_Ee-nh_2AC5kDVA" entityName="catalog/*_html">
-    <signatures__OperationInterface id="_sFX1tCM_Ee-nh_2AC5kDVA" entityName="catalog/*_html" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFX1tiM_Ee-nh_2AC5kDVA" entityName="catalog/*_html$null" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFYcwSM_Ee-nh_2AC5kDVA" entityName="catalog/*_html$null" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature parameterName="long" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.6"/>
-      </parameters__OperationSignature>
-      <parameters__OperationSignature dataType__Parameter="_sFUyYSM_Ee-nh_2AC5kDVA" parameterName="Item" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz4CM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderService"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz4SM_Ee-nh_2AC5kDVA" entityName="catalog/list_html">
-    <signatures__OperationInterface id="_sFXOoiM_Ee-nh_2AC5kDVA" entityName="catalog/list_html" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz4iM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_CustomerRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMtz4yM_Ee-nh_2AC5kDVA" entityName="catalog/form_html">
-    <signatures__OperationInterface id="_sFUyYyM_Ee-nh_2AC5kDVA" entityName="catalog/form_html" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA">
-      <parameters__OperationSignature dataType__Parameter="_sFUyYSM_Ee-nh_2AC5kDVA" parameterName="Item" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_sFVZcCM_Ee-nh_2AC5kDVA" entityName="catalog/form_html$null" returnType__OperationSignature="_sFUyYiM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMua4CM_Ee-nh_2AC5kDVA" entityName="customer/list_html">
-    <signatures__OperationInterface id="_sFZD0iM_Ee-nh_2AC5kDVA" entityName="customer/list_html" returnType__OperationSignature="_sFMPgCM_Ee-nh_2AC5kDVA"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_sMua4SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_OrderRepository"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sEaMYCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_customerstub_PagedModel"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sEd2wCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_customerstub_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFMPgCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_web_ModelAndView"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFMPgyM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_Customer"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFMPhCM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_customer_web_HttpServletRequest"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFUyYSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_Item"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFUyYiM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_catalog_web_ModelAndView"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFWAgSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_ModelAndView"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFWnlSM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_logic_Order"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFZq5iM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_catalogstub_ResponseEntity"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_sFaR8SM_Ee-nh_2AC5kDVA" entityName="com_ewolff_microservice_order_catalogstub_PagedModel"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og6lnSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_clients_CatalogClient"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_og7MoCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_OrderRepository"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oYVRUCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_customerstub_PagedModel"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oYZiwCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_customerstub_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZGGUCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_web_ModelAndView"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZGGUyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_Customer"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZGtYCNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_customer_web_HttpServletRequest"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZRFciNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_Item"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZRFcyNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_catalog_web_ModelAndView"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZSTkSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_ModelAndView"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZS6oSNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_logic_Order"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZV98iNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_catalogstub_ResponseEntity"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_oZV99SNBEe-pgp6J6kuhyw" entityName="com_ewolff_microservice_order_catalogstub_PagedModel"/>
 </repository:Repository>

@@ -1,7 +1,7 @@
 # [Retriever](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-Retriever) Report
 | Version | Date |
 | ------- | ---- |
-| v5.2.0.202406051123 | Wed Jun  5 13:29:32 UTC 2024 |
+| v5.2.0.202406051123 | Wed Jun  5 13:44:20 UTC 2024 |
 
 ## Git repository information
 |      Attribute    | Value |
@@ -29,16 +29,16 @@
 | OS | Linux  |
 | Distro | Ubuntu 22.04.4 LTS x86_64  |
 | Kernel | 6.5.0-1021-azure  |
-| CPU | AMD EPYC 7763 (4) @ 2.742GHz  |
+| CPU | AMD EPYC 7763 (4) @ 3.276GHz  |
 | GPU | 00:08.0 Microsoft Corporation Hyper-V virtual VGA  |
-| Memory | 789MiB / 15981MiB  |
+| Memory | 800MiB / 15981MiB  |
 
 ## Retriever execution time
 | Metric | Time (seconds) |
 | --- | ---: |
-| Real CPU Time | 21.18 |
-| User CPU Time | 56.26 |
-| System CPU Time | 2.78 |
+| Real CPU Time | 23.23 |
+| User CPU Time | 57.40 |
+| System CPU Time | 2.84 |
 <!--
 Explainations:
 - __Real CPU Time__: actual time the command has run (can be less than total time spent in user and system mode for multi-threaded processes)
@@ -47,7 +47,7 @@ Explainations:
 -->
 
 ## Cloc analysis
-cloc v 1.90  T=9.58 s (243.2 files/s, 51977.4 lines/s)
+cloc v 1.90  T=9.55 s (244.0 files/s, 52144.7 lines/s)
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
