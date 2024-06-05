@@ -1,136 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_je9GoiNMEe-QM61WBmyjjw">
-  <components__Repository xsi:type="repository:BasicComponent" id="_jebiIiNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets_web_VetResource">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jebiICNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/vets[GET] Provider" providedInterface__OperationProvidedRole="_jea7ECNMEe-QM61WBmyjjw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_jebiISNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets_model_VetRepository Consumer" requiredInterface__OperationRequiredRole="_jea7EyNMEe-QM61WBmyjjw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdr7RyNMEe-QM61WBmyjjw" describedService__SEFF="_jXtPECNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdr7RCNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdr7RSNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdr7RSNMEe-QM61WBmyjjw" entityName="vetRepository.findAll()" predecessor_AbstractAction="_jdr7RCNMEe-QM61WBmyjjw" successor_AbstractAction="_jdr7RiNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.vetRepository.findAll()"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="vetRepository.findAll()"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdr7RiNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdr7RSNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jed-aSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jed-aCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Provider" providedInterface__OperationProvidedRole="_jea7FCNMEe-QM61WBmyjjw"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jeelciNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_web_OwnerResource">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jeelcCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_jea7FiNMEe-QM61WBmyjjw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_jeelcSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Consumer" requiredInterface__OperationRequiredRole="_jea7FCNMEe-QM61WBmyjjw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdqGFCNMEe-QM61WBmyjjw" describedService__SEFF="_jXudMyNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdpfCyNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdqGECNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdqGECNMEe-QM61WBmyjjw" entityName="ownerEntityMapper.map(ownerModel,ownerRequest)" predecessor_AbstractAction="_jdpfCyNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqGESNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdqGESNMEe-QM61WBmyjjw" entityName="log.info(&quot;Saving owner {}&quot;,ownerModel)" predecessor_AbstractAction="_jdqGECNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqGEiNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdqGEiNMEe-QM61WBmyjjw" entityName="ownerRepository.save(ownerModel)" predecessor_AbstractAction="_jdqGESNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqGEyNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdqGEyNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdqGEiNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdqGGCNMEe-QM61WBmyjjw" describedService__SEFF="_jXudNiNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdqGFSNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdqGFiNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdqGFiNMEe-QM61WBmyjjw" entityName="ownerRepository.findById(ownerId)" predecessor_AbstractAction="_jdqGFSNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqGFyNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.findById(ownerId)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.findById(ownerId)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdqGFyNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdqGFiNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdpfCiNMEe-QM61WBmyjjw" describedService__SEFF="_jXudMSNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdpfByNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdpfCCNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdpfCCNMEe-QM61WBmyjjw" entityName="ownerRepository.save(owner)" predecessor_AbstractAction="_jdpfByNMEe-QM61WBmyjjw" successor_AbstractAction="_jdpfCSNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.save(owner)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.save(owner)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdpfCSNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdpfCCNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdpfBiNMEe-QM61WBmyjjw" describedService__SEFF="_jXvEQCNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdpfAyNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdpfBCNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdpfBCNMEe-QM61WBmyjjw" entityName="ownerRepository.findAll()" predecessor_AbstractAction="_jdpfAyNMEe-QM61WBmyjjw" successor_AbstractAction="_jdpfBSNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.findAll()"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.findAll()"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdpfBSNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdpfBCNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jel6PSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets_model_VetRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jel6PCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets_model_VetRepository Provider" providedInterface__OperationProvidedRole="_jea7EyNMEe-QM61WBmyjjw"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jel6QSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_web_VisitResource">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jel6PiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/pets/visits[GET] Provider" providedInterface__OperationProvidedRole="_jea7FyNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jel6PyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST] Provider" providedInterface__OperationProvidedRole="_jea7EiNMEe-QM61WBmyjjw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_jel6QCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository Consumer" requiredInterface__OperationRequiredRole="_jea7FSNMEe-QM61WBmyjjw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdnp0iNMEe-QM61WBmyjjw" describedService__SEFF="_jXrZ4SNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jYVhMSNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdnp0CNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdnp0CNMEe-QM61WBmyjjw" entityName="new Visits(byPetIdIn)" predecessor_AbstractAction="_jYVhMSNMEe-QM61WBmyjjw" successor_AbstractAction="_jdnp0SNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.new Visits(byPetIdIn)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new Visits(byPetIdIn)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdnp0SNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdnp0CNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdpfASNMEe-QM61WBmyjjw" describedService__SEFF="_jXsoASNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdoQ4CNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdo38CNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdo38CNMEe-QM61WBmyjjw" entityName="visit.setPetId(petId)" predecessor_AbstractAction="_jdoQ4CNMEe-QM61WBmyjjw" successor_AbstractAction="_jdo38SNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdo38SNMEe-QM61WBmyjjw" entityName="log.info(&quot;Saving visit {}&quot;,visit)" predecessor_AbstractAction="_jdo38CNMEe-QM61WBmyjjw" successor_AbstractAction="_jdo38iNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdo38iNMEe-QM61WBmyjjw" entityName="visitRepository.save(visit)" predecessor_AbstractAction="_jdo38SNMEe-QM61WBmyjjw" successor_AbstractAction="_jdpfACNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.visitRepository.save(visit)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="visitRepository.save(visit)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdpfACNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdo38iNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdnp1yNMEe-QM61WBmyjjw" describedService__SEFF="_jXsoAyNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdnp1CNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdnp1SNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdnp1SNMEe-QM61WBmyjjw" entityName="visitRepository.findByPetId(petId)" predecessor_AbstractAction="_jdnp1CNMEe-QM61WBmyjjw" successor_AbstractAction="_jdnp1iNMEe-QM61WBmyjjw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.visitRepository.findByPetId(petId)"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="visitRepository.findByPetId(petId)"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdnp1iNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdnp1SNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jerZziNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_api_boundary_web_ApiGatewayController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jerZzSNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/api/gateway/owners[GET] Provider" providedInterface__OperationProvidedRole="_jea7ESNMEe-QM61WBmyjjw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdr7QiNMEe-QM61WBmyjjw" describedService__SEFF="_jXvERCNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdrUOCNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdr7QCNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdr7QCNMEe-QM61WBmyjjw" entityName="customersServiceClient.getOwner(ownerId).flatMap(owner -> visitsServiceClient.getVisitsForPets(owner.getPetIds()).transform(it -> {&#xA;  ReactiveCircuitBreaker cb=cbFactory.create(&quot;getOwnerDetails&quot;);&#xA;  return cb.run(it,throwable -> emptyVisitsForPets());&#xA;}&#xA;).map(addVisitsToOwner(owner)))" predecessor_AbstractAction="_jdrUOCNMEe-QM61WBmyjjw" successor_AbstractAction="_jdr7QSNMEe-QM61WBmyjjw">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_UgYikiNZEe-KmdYUycVGjA">
+  <components__Repository xsi:type="repository:BasicComponent" id="_Uf9EyyNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_api_boundary_web_ApiGatewayController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Uf9EyiNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/api/gateway/owners[GET] Provider" providedInterface__OperationProvidedRole="_Uf9ExSNZEe-KmdYUycVGjA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfIlYiNZEe-KmdYUycVGjA" describedService__SEFF="_UZTqNCNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UZ-_oSNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfIlYCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfIlYCNZEe-KmdYUycVGjA" entityName="customersServiceClient.getOwner(ownerId).flatMap(owner -> visitsServiceClient.getVisitsForPets(owner.getPetIds()).transform(it -> {&#xA;  ReactiveCircuitBreaker cb=cbFactory.create(&quot;getOwnerDetails&quot;);&#xA;  return cb.run(it,throwable -> emptyVisitsForPets());&#xA;}&#xA;).map(addVisitsToOwner(owner)))" predecessor_AbstractAction="_UZ-_oSNZEe-KmdYUycVGjA" successor_AbstractAction="_UfIlYSNZEe-KmdYUycVGjA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.customersServiceClient.getOwner(ownerId).flatMap(owner -> visitsServiceClient.getVisitsForPets(owner.getPetIds()).transform(it -> {&#xA;  ReactiveCircuitBreaker cb=cbFactory.create(&quot;getOwnerDetails&quot;);&#xA;  return cb.run(it,throwable -> emptyVisitsForPets());&#xA;}&#xA;).map(addVisitsToOwner(owner)))"/>
@@ -140,23 +14,72 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdr7QSNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdr7QCNMEe-QM61WBmyjjw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfIlYSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfIlYCNZEe-KmdYUycVGjA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jetO9iNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jetO9SNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository Provider" providedInterface__OperationProvidedRole="_jea7FSNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgAIEiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_web_VisitResource">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_Uf_hDSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/pets/visits[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EwSNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgAIECNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST] Provider" providedInterface__OperationProvidedRole="_Uf8dtyNZEe-KmdYUycVGjA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_UgAIESNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository Consumer" requiredInterface__OperationRequiredRole="_Uf9EyCNZEe-KmdYUycVGjA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfOE9yNZEe-KmdYUycVGjA" describedService__SEFF="_UZMVcCNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfOE9CNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfOE9SNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfOE9SNZEe-KmdYUycVGjA" entityName="new Visits(byPetIdIn)" predecessor_AbstractAction="_UfOE9CNZEe-KmdYUycVGjA" successor_AbstractAction="_UfOE9iNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.new Visits(byPetIdIn)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="new Visits(byPetIdIn)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfOE9iNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfOE9SNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfOsBCNZEe-KmdYUycVGjA" describedService__SEFF="_UZU4UCNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfOsASNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfOsAiNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfOsAiNZEe-KmdYUycVGjA" entityName="visitRepository.findByPetId(petId)" predecessor_AbstractAction="_UfOsASNZEe-KmdYUycVGjA" successor_AbstractAction="_UfOsAyNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.visitRepository.findByPetId(petId)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="visitRepository.findByPetId(petId)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfOsAyNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfOsAiNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfPTEiNZEe-KmdYUycVGjA" describedService__SEFF="_UZURQyNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfOsBSNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfOsBiNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfOsBiNZEe-KmdYUycVGjA" entityName="visit.setPetId(petId)" predecessor_AbstractAction="_UfOsBSNZEe-KmdYUycVGjA" successor_AbstractAction="_UfOsByNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfOsByNZEe-KmdYUycVGjA" entityName="log.info(&quot;Saving visit {}&quot;,visit)" predecessor_AbstractAction="_UfOsBiNZEe-KmdYUycVGjA" successor_AbstractAction="_UfPTECNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfPTECNZEe-KmdYUycVGjA" entityName="visitRepository.save(visit)" predecessor_AbstractAction="_UfOsByNZEe-KmdYUycVGjA" successor_AbstractAction="_UfPTESNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.visitRepository.save(visit)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="visitRepository.save(visit)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfPTESNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfPTECNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jetO-CNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_PetRepository">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jetO9yNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_PetRepository Provider" providedInterface__OperationProvidedRole="_jea7GiNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgFnriNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgFnrSNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository Provider" providedInterface__OperationProvidedRole="_Uf9EyCNZEe-KmdYUycVGjA"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_jetO_SNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_web_PetResource">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jetO-SNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/petTypes[GET] Provider" providedInterface__OperationProvidedRole="_jea7GSNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_jetO-iNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_jea7GCNMEe-QM61WBmyjjw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_jetO-yNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_PetRepository Consumer" requiredInterface__OperationRequiredRole="_jea7GiNMEe-QM61WBmyjjw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_jetO_CNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Consumer" requiredInterface__OperationRequiredRole="_jea7FCNMEe-QM61WBmyjjw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdrUMSNMEe-QM61WBmyjjw" describedService__SEFF="_jXqLwiNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdqtKCNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdqtKSNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdqtKSNMEe-QM61WBmyjjw" entityName="petRepository.findPetTypes()" predecessor_AbstractAction="_jdqtKCNMEe-QM61WBmyjjw" successor_AbstractAction="_jdrUMCNMEe-QM61WBmyjjw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgFnsCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_PetRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgFnryNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_PetRepository Provider" providedInterface__OperationProvidedRole="_Uf9EwCNZEe-KmdYUycVGjA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgGOsyNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_web_PetResource">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgFnsSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/petTypes[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EySNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgGOsCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_Uf9EwyNZEe-KmdYUycVGjA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_UgGOsSNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Consumer" requiredInterface__OperationRequiredRole="_Uf9ExCNZEe-KmdYUycVGjA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_UgGOsiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_PetRepository Consumer" requiredInterface__OperationRequiredRole="_Uf9EwCNZEe-KmdYUycVGjA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfM21yNZEe-KmdYUycVGjA" describedService__SEFF="_UZR1ACNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfM21CNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfM21SNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfM21SNZEe-KmdYUycVGjA" entityName="petRepository.findPetTypes()" predecessor_AbstractAction="_UfM21CNZEe-KmdYUycVGjA" successor_AbstractAction="_UfM21iNZEe-KmdYUycVGjA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.petRepository.findPetTypes()"/>
@@ -166,16 +89,11 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdrUMCNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdqtKSNMEe-QM61WBmyjjw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfM21iNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfM21SNZEe-KmdYUycVGjA"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdqtJiNMEe-QM61WBmyjjw" describedService__SEFF="_jXpksSNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdqtIyNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdqtJCNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdqtJCNMEe-QM61WBmyjjw" entityName="save(pet,petRequest)" predecessor_AbstractAction="_jdqtIyNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqtJSNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdqtJSNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdqtJCNMEe-QM61WBmyjjw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdqtIiNMEe-QM61WBmyjjw" describedService__SEFF="_jXl6UCNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdqGGiNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdqtICNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdqtICNMEe-QM61WBmyjjw" entityName="new PetDetails(pet)" predecessor_AbstractAction="_jdqGGiNMEe-QM61WBmyjjw" successor_AbstractAction="_jdqtISNMEe-QM61WBmyjjw">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfM20iNZEe-KmdYUycVGjA" describedService__SEFF="_UZTDIiNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfMPyCNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfM20CNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfM20CNZEe-KmdYUycVGjA" entityName="new PetDetails(pet)" predecessor_AbstractAction="_UfMPyCNZEe-KmdYUycVGjA" successor_AbstractAction="_UfM20SNZEe-KmdYUycVGjA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.new PetDetails(pet)"/>
@@ -185,12 +103,12 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdqtISNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdqtICNMEe-QM61WBmyjjw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfM20SNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfM20CNZEe-KmdYUycVGjA"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_jdrUNiNMEe-QM61WBmyjjw" describedService__SEFF="_jXoWkyNMEe-QM61WBmyjjw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_jdrUMiNMEe-QM61WBmyjjw" entityName="Start Action" successor_AbstractAction="_jdrUMyNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:InternalAction" id="_jdrUMyNMEe-QM61WBmyjjw" entityName="owner.addPet(pet)" predecessor_AbstractAction="_jdrUMiNMEe-QM61WBmyjjw" successor_AbstractAction="_jdrUNCNMEe-QM61WBmyjjw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_jdrUNCNMEe-QM61WBmyjjw" entityName="save(pet,petRequest)" predecessor_AbstractAction="_jdrUMyNMEe-QM61WBmyjjw" successor_AbstractAction="_jdrUNSNMEe-QM61WBmyjjw">
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfOE8iNZEe-KmdYUycVGjA" describedService__SEFF="_UZTDJSNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfNd4yNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfNd5CNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfNd5CNZEe-KmdYUycVGjA" entityName="owner.addPet(pet)" predecessor_AbstractAction="_UfNd4yNZEe-KmdYUycVGjA" successor_AbstractAction="_UfOE8CNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfOE8CNZEe-KmdYUycVGjA" entityName="save(pet,petRequest)" predecessor_AbstractAction="_UfNd5CNZEe-KmdYUycVGjA" successor_AbstractAction="_UfOE8SNZEe-KmdYUycVGjA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.save(pet,petRequest)"/>
@@ -200,122 +118,204 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_jdrUNSNMEe-QM61WBmyjjw" entityName="Stop Action" predecessor_AbstractAction="_jdrUNCNMEe-QM61WBmyjjw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfOE8SNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfOE8CNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfNd4iNZEe-KmdYUycVGjA" describedService__SEFF="_UZScEyNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfM22CNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfNd4CNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfNd4CNZEe-KmdYUycVGjA" entityName="save(pet,petRequest)" predecessor_AbstractAction="_UfM22CNZEe-KmdYUycVGjA" successor_AbstractAction="_UfNd4SNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfNd4SNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfNd4CNZEe-KmdYUycVGjA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_je74cSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets">
-    <assemblyContexts__ComposedStructure id="_je9GkCNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jebiIiNMEe-QM61WBmyjjw"/>
-    <assemblyContexts__ComposedStructure id="_je9GlCNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jel6PSNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_je-UtCNMEe-QM61WBmyjjw" requiringAssemblyContext_AssemblyConnector="_je9GkCNMEe-QM61WBmyjjw" providingAssemblyContext_AssemblyConnector="_je9GlCNMEe-QM61WBmyjjw" providedRole_AssemblyConnector="_jel6PCNMEe-QM61WBmyjjw" requiredRole_AssemblyConnector="_jebiISNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7xSNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jebiICNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je74cCNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GkCNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je74cCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/vets[GET] Provider" providedInterface__OperationProvidedRole="_jea7ECNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgNjciNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets_web_VetResource">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgNjcCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/vets[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EwiNZEe-KmdYUycVGjA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_UgNjcSNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets_model_VetRepository Consumer" requiredInterface__OperationRequiredRole="_Uf9ExyNZEe-KmdYUycVGjA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfJMciNZEe-KmdYUycVGjA" describedService__SEFF="_UZR1BCNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfIlZCNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfJMcCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfJMcCNZEe-KmdYUycVGjA" entityName="vetRepository.findAll()" predecessor_AbstractAction="_UfIlZCNZEe-KmdYUycVGjA" successor_AbstractAction="_UfJMcSNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.vetRepository.findAll()"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="vetRepository.findAll()"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfJMcSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfJMcCNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_je8fgSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_api_boundary_web_ApiGatewayController">
-    <assemblyContexts__ComposedStructure id="_je9GniNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jerZziNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7wSNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jerZzSNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fgCNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GniNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fgCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/api/gateway/owners[GET] Provider" providedInterface__OperationProvidedRole="_jea7ESNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgPYoiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_web_OwnerResource">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgPYoCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_Uf9ExiNZEe-KmdYUycVGjA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_UgPYoSNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Consumer" requiredInterface__OperationRequiredRole="_Uf9ExCNZEe-KmdYUycVGjA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfJzgiNZEe-KmdYUycVGjA" describedService__SEFF="_UZPYwCNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfJMdCNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfJzgCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfJzgCNZEe-KmdYUycVGjA" entityName="ownerRepository.findAll()" predecessor_AbstractAction="_UfJMdCNZEe-KmdYUycVGjA" successor_AbstractAction="_UfJzgSNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.findAll()"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.findAll()"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfJzgSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfJzgCNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfMPwiNZEe-KmdYUycVGjA" describedService__SEFF="_UZRN8CNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfLBoCNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfLosCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfLosCNZEe-KmdYUycVGjA" entityName="ownerEntityMapper.map(ownerModel,ownerRequest)" predecessor_AbstractAction="_UfLBoCNZEe-KmdYUycVGjA" successor_AbstractAction="_UfLosSNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfLosSNZEe-KmdYUycVGjA" entityName="log.info(&quot;Saving owner {}&quot;,ownerModel)" predecessor_AbstractAction="_UfLosCNZEe-KmdYUycVGjA" successor_AbstractAction="_UfMPwCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:InternalAction" id="_UfMPwCNZEe-KmdYUycVGjA" entityName="ownerRepository.save(ownerModel)" predecessor_AbstractAction="_UfLosSNZEe-KmdYUycVGjA" successor_AbstractAction="_UfMPwSNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfMPwSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfMPwCNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfMPxiNZEe-KmdYUycVGjA" describedService__SEFF="_UZP_0CNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfMPwyNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfMPxCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfMPxCNZEe-KmdYUycVGjA" entityName="ownerRepository.findById(ownerId)" predecessor_AbstractAction="_UfMPwyNZEe-KmdYUycVGjA" successor_AbstractAction="_UfMPxSNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.findById(ownerId)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.findById(ownerId)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfMPxSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfMPxCNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_UfKakiNZEe-KmdYUycVGjA" describedService__SEFF="_UZRN8yNZEe-KmdYUycVGjA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_UfJzgyNZEe-KmdYUycVGjA" entityName="Start Action" successor_AbstractAction="_UfKakCNZEe-KmdYUycVGjA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_UfKakCNZEe-KmdYUycVGjA" entityName="ownerRepository.save(owner)" predecessor_AbstractAction="_UfJzgyNZEe-KmdYUycVGjA" successor_AbstractAction="_UfKakSNZEe-KmdYUycVGjA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.ownerRepository.save(owner)"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="ownerRepository.save(owner)"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_UfKakSNZEe-KmdYUycVGjA" entityName="Stop Action" predecessor_AbstractAction="_UfKakCNZEe-KmdYUycVGjA"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_je8fhSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers">
-    <assemblyContexts__ComposedStructure id="_je9GkiNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jed-aSNMEe-QM61WBmyjjw"/>
-    <assemblyContexts__ComposedStructure id="_je9GmiNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jetO-CNMEe-QM61WBmyjjw"/>
-    <assemblyContexts__ComposedStructure id="_je9GnCNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jetO_SNMEe-QM61WBmyjjw"/>
-    <assemblyContexts__ComposedStructure id="_je9GoCNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jeelciNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_je-UsSNMEe-QM61WBmyjjw" requiringAssemblyContext_AssemblyConnector="_je9GnCNMEe-QM61WBmyjjw" providingAssemblyContext_AssemblyConnector="_je9GkiNMEe-QM61WBmyjjw" providedRole_AssemblyConnector="_jed-aCNMEe-QM61WBmyjjw" requiredRole_AssemblyConnector="_jetO_CNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_je-UsiNMEe-QM61WBmyjjw" requiringAssemblyContext_AssemblyConnector="_je9GnCNMEe-QM61WBmyjjw" providingAssemblyContext_AssemblyConnector="_je9GmiNMEe-QM61WBmyjjw" providedRole_AssemblyConnector="_jetO9yNMEe-QM61WBmyjjw" requiredRole_AssemblyConnector="_jetO-yNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_je-UsyNMEe-QM61WBmyjjw" requiringAssemblyContext_AssemblyConnector="_je9GoCNMEe-QM61WBmyjjw" providingAssemblyContext_AssemblyConnector="_je9GkiNMEe-QM61WBmyjjw" providedRole_AssemblyConnector="_jed-aCNMEe-QM61WBmyjjw" requiredRole_AssemblyConnector="_jeelcSNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7wCNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jetO-SNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fhCNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GnCNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7wiNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jetO-iNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fgiNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GnCNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7xiNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jeelcCNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fgyNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GoCNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fgiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_jea7GCNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fgyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_jea7FiNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fhCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/petTypes[GET] Provider" providedInterface__OperationProvidedRole="_jea7GSNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgVfTiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgVfTSNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository Provider" providedInterface__OperationProvidedRole="_Uf9ExCNZEe-KmdYUycVGjA"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_je8fiCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits">
-    <assemblyContexts__ComposedStructure id="_je9GliNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jel6QSNMEe-QM61WBmyjjw"/>
-    <assemblyContexts__ComposedStructure id="_je9GmCNMEe-QM61WBmyjjw" encapsulatedComponent__AssemblyContext="_jetO9iNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_je-UsCNMEe-QM61WBmyjjw" requiringAssemblyContext_AssemblyConnector="_je9GliNMEe-QM61WBmyjjw" providingAssemblyContext_AssemblyConnector="_je9GmCNMEe-QM61WBmyjjw" providedRole_AssemblyConnector="_jetO9SNMEe-QM61WBmyjjw" requiredRole_AssemblyConnector="_jel6QCNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7wyNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jel6PiNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fhiNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GliNMEe-QM61WBmyjjw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_je-7xCNMEe-QM61WBmyjjw" innerProvidedRole_ProvidedDelegationConnector="_jel6PyNMEe-QM61WBmyjjw" outerProvidedRole_ProvidedDelegationConnector="_je8fhyNMEe-QM61WBmyjjw" assemblyContext_ProvidedDelegationConnector="_je9GliNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fhiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/pets/visits[GET] Provider" providedInterface__OperationProvidedRole="_jea7FyNMEe-QM61WBmyjjw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_je8fhyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST] Provider" providedInterface__OperationProvidedRole="_jea7EiNMEe-QM61WBmyjjw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_UgVfUCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets_model_VetRepository">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgVfTyNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets_model_VetRepository Provider" providedInterface__OperationProvidedRole="_Uf9ExyNZEe-KmdYUycVGjA"/>
   </components__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7ECNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/vets[GET]">
-    <signatures__OperationInterface id="_jXtPECNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/vets[GET]" returnType__OperationSignature="_jXqLwSNMEe-QM61WBmyjjw"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7ESNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/api/gateway/owners[GET]">
-    <signatures__OperationInterface id="_jXvERCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/api/gateway/owners[GET]" returnType__OperationSignature="_jXvEQyNMEe-QM61WBmyjjw">
+  <components__Repository xsi:type="repository:CompositeComponent" id="_UgXUciNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits">
+    <assemblyContexts__ComposedStructure id="_UgX7iCNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgAIEiNZEe-KmdYUycVGjA"/>
+    <assemblyContexts__ComposedStructure id="_UgYikCNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgFnriNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_UgZwtCNZEe-KmdYUycVGjA" requiringAssemblyContext_AssemblyConnector="_UgX7iCNZEe-KmdYUycVGjA" providingAssemblyContext_AssemblyConnector="_UgYikCNZEe-KmdYUycVGjA" providedRole_AssemblyConnector="_UgFnrSNZEe-KmdYUycVGjA" requiredRole_AssemblyConnector="_UgAIESNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXwyNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_Uf_hDSNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUcSNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7iCNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXxSNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_UgAIECNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUcCNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7iCNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUcCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST] Provider" providedInterface__OperationProvidedRole="_Uf8dtyNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUcSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/pets/visits[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EwSNZEe-KmdYUycVGjA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_UgXUdCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_api_boundary_web_ApiGatewayController">
+    <assemblyContexts__ComposedStructure id="_UgX7hCNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_Uf9EyyNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXxCNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_Uf9EyiNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUcyNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7hCNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUcyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/api/gateway/owners[GET] Provider" providedInterface__OperationProvidedRole="_Uf9ExSNZEe-KmdYUycVGjA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_UgXUdiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets">
+    <assemblyContexts__ComposedStructure id="_UgX7iiNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgNjciNZEe-KmdYUycVGjA"/>
+    <assemblyContexts__ComposedStructure id="_UgX7jiNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgVfUCNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_UgZwsyNZEe-KmdYUycVGjA" requiringAssemblyContext_AssemblyConnector="_UgX7iiNZEe-KmdYUycVGjA" providingAssemblyContext_AssemblyConnector="_UgX7jiNZEe-KmdYUycVGjA" providedRole_AssemblyConnector="_UgVfTyNZEe-KmdYUycVGjA" requiredRole_AssemblyConnector="_UgNjcSNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXwiNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_UgNjcCNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUdSNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7iiNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUdSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/vets[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EwiNZEe-KmdYUycVGjA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_UgXUeiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers">
+    <assemblyContexts__ComposedStructure id="_UgX7gCNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgPYoiNZEe-KmdYUycVGjA"/>
+    <assemblyContexts__ComposedStructure id="_UgX7giNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgGOsyNZEe-KmdYUycVGjA"/>
+    <assemblyContexts__ComposedStructure id="_UgX7hiNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgFnsCNZEe-KmdYUycVGjA"/>
+    <assemblyContexts__ComposedStructure id="_UgX7jCNZEe-KmdYUycVGjA" encapsulatedComponent__AssemblyContext="_UgVfTiNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_UgZwsCNZEe-KmdYUycVGjA" requiringAssemblyContext_AssemblyConnector="_UgX7gCNZEe-KmdYUycVGjA" providingAssemblyContext_AssemblyConnector="_UgX7jCNZEe-KmdYUycVGjA" providedRole_AssemblyConnector="_UgVfTSNZEe-KmdYUycVGjA" requiredRole_AssemblyConnector="_UgPYoSNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_UgZwsSNZEe-KmdYUycVGjA" requiringAssemblyContext_AssemblyConnector="_UgX7giNZEe-KmdYUycVGjA" providingAssemblyContext_AssemblyConnector="_UgX7hiNZEe-KmdYUycVGjA" providedRole_AssemblyConnector="_UgFnryNZEe-KmdYUycVGjA" requiredRole_AssemblyConnector="_UgGOsiNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_UgZwsiNZEe-KmdYUycVGjA" requiringAssemblyContext_AssemblyConnector="_UgX7giNZEe-KmdYUycVGjA" providingAssemblyContext_AssemblyConnector="_UgX7jCNZEe-KmdYUycVGjA" providedRole_AssemblyConnector="_UgVfTSNZEe-KmdYUycVGjA" requiredRole_AssemblyConnector="_UgGOsSNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXwCNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_UgPYoCNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUeSNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7gCNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXwSNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_UgGOsCNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUdyNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7giNZEe-KmdYUycVGjA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_UgaXxiNZEe-KmdYUycVGjA" innerProvidedRole_ProvidedDelegationConnector="_UgFnsSNZEe-KmdYUycVGjA" outerProvidedRole_ProvidedDelegationConnector="_UgXUeCNZEe-KmdYUycVGjA" assemblyContext_ProvidedDelegationConnector="_UgX7giNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUdyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_Uf9EwyNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUeCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/petTypes[GET] Provider" providedInterface__OperationProvidedRole="_Uf9EySNZEe-KmdYUycVGjA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_UgXUeSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[GET,POST,PUT] Provider" providedInterface__OperationProvidedRole="_Uf9ExiNZEe-KmdYUycVGjA"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf8dtyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST]">
+    <signatures__OperationInterface id="_UZU4UCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET]" returnType__OperationSignature="_UZKgQCNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_UZURQyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[POST]" returnType__OperationSignature="_UZURQiNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature dataType__Parameter="_UZURQiNZEe-KmdYUycVGjA" parameterName="Visit" modifier__Parameter="in"/>
       <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7EiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET,POST]">
-    <signatures__OperationInterface id="_jXsoASNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[POST]" returnType__OperationSignature="_jXsoACNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature dataType__Parameter="_jXsoACNMEe-QM61WBmyjjw" parameterName="Visit" modifier__Parameter="in"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EwCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_PetRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EwSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/pets/visits[GET]">
+    <signatures__OperationInterface id="_UZMVcCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/pets/visits[GET]" returnType__OperationSignature="_UZLuYCNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature dataType__Parameter="_UZKgQCNZEe-KmdYUycVGjA" parameterName="List&lt;Integer>" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EwiNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/vets[GET]">
+    <signatures__OperationInterface id="_UZR1BCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/vets[GET]" returnType__OperationSignature="_UZKgQCNZEe-KmdYUycVGjA"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EwyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT]">
+    <signatures__OperationInterface id="_UZTDIiNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[GET]" returnType__OperationSignature="_UZTDISNZEe-KmdYUycVGjA">
       <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXsoAyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets/*/visits[GET]" returnType__OperationSignature="_jXqLwSNMEe-QM61WBmyjjw">
+    <signatures__OperationInterface id="_UZTDJSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[POST]" returnType__OperationSignature="_UZTDJCNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature dataType__Parameter="_UZScEiNZEe-KmdYUycVGjA" parameterName="PetRequest" modifier__Parameter="in"/>
+      <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
+        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
+      </parameters__OperationSignature>
+    </signatures__OperationInterface>
+    <signatures__OperationInterface id="_UZScEyNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners/*/pets[PUT]" returnType__OperationSignature="_UZQm4CNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature dataType__Parameter="_UZScEiNZEe-KmdYUycVGjA" parameterName="PetRequest" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9ExCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9ExSNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/api/gateway/owners[GET]">
+    <signatures__OperationInterface id="_UZTqNCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/api/gateway/owners[GET]" returnType__OperationSignature="_UZTqMyNZEe-KmdYUycVGjA">
       <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7EyNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_vets_model_VetRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7FCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_OwnerRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7FSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7FiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[GET,POST,PUT]">
-    <signatures__OperationInterface id="_jXudMyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[PUT]" returnType__OperationSignature="_jXpksCNMEe-QM61WBmyjjw">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9ExiNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[GET,POST,PUT]">
+    <signatures__OperationInterface id="_UZPYwCNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[GET]" returnType__OperationSignature="_UZKgQCNZEe-KmdYUycVGjA"/>
+    <signatures__OperationInterface id="_UZRN8CNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[PUT]" returnType__OperationSignature="_UZQm4CNZEe-KmdYUycVGjA">
       <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
       </parameters__OperationSignature>
-      <parameters__OperationSignature dataType__Parameter="_jXt2ICNMEe-QM61WBmyjjw" parameterName="OwnerRequest" modifier__Parameter="in"/>
+      <parameters__OperationSignature dataType__Parameter="_UZP_0iNZEe-KmdYUycVGjA" parameterName="OwnerRequest" modifier__Parameter="in"/>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXudNiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[GET]" returnType__OperationSignature="_jXudNSNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
-      </parameters__OperationSignature>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXudMSNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[POST]" returnType__OperationSignature="_jXudMCNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature dataType__Parameter="_jXt2ICNMEe-QM61WBmyjjw" parameterName="OwnerRequest" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXvEQCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners[GET]$2" returnType__OperationSignature="_jXqLwSNMEe-QM61WBmyjjw"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7FyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/pets/visits[GET]">
-    <signatures__OperationInterface id="_jXrZ4SNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/pets/visits[GET]" returnType__OperationSignature="_jXrZ4CNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature dataType__Parameter="_jXqLwSNMEe-QM61WBmyjjw" parameterName="List&lt;Integer>" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7GCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[GET,POST,PUT]">
-    <signatures__OperationInterface id="_jXpksSNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[PUT]" returnType__OperationSignature="_jXpksCNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature dataType__Parameter="_jXoWkSNMEe-QM61WBmyjjw" parameterName="PetRequest" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXl6UCNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[GET]" returnType__OperationSignature="_jXlTQCNMEe-QM61WBmyjjw">
+    <signatures__OperationInterface id="_UZP_0CNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[GET]$2" returnType__OperationSignature="_UZPYwiNZEe-KmdYUycVGjA">
       <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
-    <signatures__OperationInterface id="_jXoWkyNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/owners/*/pets[POST]" returnType__OperationSignature="_jXoWkiNMEe-QM61WBmyjjw">
-      <parameters__OperationSignature dataType__Parameter="_jXoWkSNMEe-QM61WBmyjjw" parameterName="PetRequest" modifier__Parameter="in"/>
-      <parameters__OperationSignature parameterName="int" modifier__Parameter="in">
-        <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.0"/>
-      </parameters__OperationSignature>
+    <signatures__OperationInterface id="_UZRN8yNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/owners[POST]" returnType__OperationSignature="_UZRN8iNZEe-KmdYUycVGjA">
+      <parameters__OperationSignature dataType__Parameter="_UZP_0iNZEe-KmdYUycVGjA" parameterName="OwnerRequest" modifier__Parameter="in"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7GSNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/petTypes[GET]">
-    <signatures__OperationInterface id="_jXqLwiNMEe-QM61WBmyjjw" entityName="SPRING-APPLICATION/petTypes[GET]" returnType__OperationSignature="_jXqLwSNMEe-QM61WBmyjjw"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9ExyNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_vets_model_VetRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EyCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_model_VisitRepository"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Uf9EySNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/petTypes[GET]">
+    <signatures__OperationInterface id="_UZR1ACNZEe-KmdYUycVGjA" entityName="SPRING-APPLICATION/petTypes[GET]" returnType__OperationSignature="_UZKgQCNZEe-KmdYUycVGjA"/>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_jea7GiNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_PetRepository"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXlTQCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_web_PetDetails"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXoWkSNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_web_PetRequest"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXoWkiNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_Pet"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXpksCNMEe-QM61WBmyjjw" entityName="Void"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXqLwSNMEe-QM61WBmyjjw" entityName="java_util_List"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXrZ4CNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_web_VisitResource_Visits"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXsoACNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_visits_model_Visit"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXt2ICNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_web_OwnerRequest"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXudMCNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_customers_model_Owner"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXudNSNMEe-QM61WBmyjjw" entityName="java_util_Optional"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_jXvEQyNMEe-QM61WBmyjjw" entityName="org_springframework_samples_petclinic_api_boundary_web_Mono"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZKgQCNZEe-KmdYUycVGjA" entityName="java_util_List"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZLuYCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_web_VisitResource_Visits"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZPYwiNZEe-KmdYUycVGjA" entityName="java_util_Optional"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZP_0iNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_web_OwnerRequest"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZQm4CNZEe-KmdYUycVGjA" entityName="Void"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZRN8iNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_Owner"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZScEiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_web_PetRequest"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZTDISNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_web_PetDetails"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZTDJCNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_customers_model_Pet"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZTqMyNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_api_boundary_web_Mono"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_UZURQiNZEe-KmdYUycVGjA" entityName="org_springframework_samples_petclinic_visits_model_Visit"/>
 </repository:Repository>
