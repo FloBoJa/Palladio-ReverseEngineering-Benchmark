@@ -28,7 +28,7 @@ jobs:
     outputs:
       array: ${{ steps.find_directories.outputs.array }}
       latest_version: ${{ steps.latest_version.outputs.value }}
-      max_parallel: ${{ steps.force_sequential.outputs.value }}
+      max_parallel: ${{ steps.max_parallel.outputs.value }}
 
     steps:
       - name: Checkout repository
@@ -51,10 +51,14 @@ jobs:
           )
           echo "value=$LATEST_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Force sequential execution for vulnerability analysis
-        id: force_sequential
-        if: ${{ inputs.analyzeVulnerabilities == 'true' }}
-        run: echo "value=1" >> $GITHUB_OUTPUT
+      - name: Determine maximum parallelism
+        id: max_parallel
+        run: |
+          if [ "${{ github.event.inputs.analyzeVulnerabilities }}" == "true" ]; then
+            echo "value=1" >> $GITHUB_ENV
+          else
+            echo "value=1000" >> $GITHUB_ENV
+          fi
 
   generate_pcm:
     runs-on: ubuntu-latest
