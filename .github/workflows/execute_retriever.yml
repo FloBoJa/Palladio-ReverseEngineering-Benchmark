@@ -1,0 +1,106 @@
+name: Run Retriever
+
+on:
+  workflow_call:
+    inputs:
+      overrideBenchmark:
+        required: true
+        type: string
+      analyzeVulnerabilities:
+        required: true
+        type: string
+
+jobs:
+  shared-steps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout benchmark repository
+        uses: actions/checkout@v3
+        with:
+          path: benchmark
+
+      - name: Install yq
+        run: |
+          wget https://github.com/mikefarah/yq/releases/download/v4.2.0/yq_linux_amd64.tar.gz -O - \
+          | tar xz && sudo mv yq_linux_amd64 /usr/bin/yq
+
+      - name: Parse .retriever.yml
+        run: |
+          CONFIG_FILE="benchmark/${{ matrix.directory }}/.retriever.yml"
+          # create comma-separated list of repositories
+          readarray -t repos < <(yq e '.repository' "$CONFIG_FILE" | sed 's/- //g')          
+          repos_str=$(IFS=,; echo "${repos[*]}")
+          echo "repositories=$repos_str" >> $GITHUB_ENV
+          echo "current_version=$(yq eval '.current_version' $CONFIG_FILE)" >> $GITHUB_ENV
+          echo "rules=$(yq eval '.rules[]' $CONFIG_FILE | paste -sd ",")" >> $GITHUB_ENV
+          echo "rules_path=$(yq eval '.rules_path // ""' $CONFIG_FILE)" >> $GITHUB_ENV
+
+          # Check for overrideBenchmark input
+          if [ "${{ github.event.inputs.overrideBenchmark }}" == "true" ]; then
+            echo "benchmark="true"" >> $GITHUB_ENV
+          else
+            echo "benchmark=$(yq eval '.benchmark // "false"' $CONFIG_FILE)" >> $GITHUB_ENV
+          fi
+
+      - name: Checkout repositories
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        run: |
+          # Assuming repositories is a comma-separated list
+          IFS=',' read -r -a repositories_array <<< "${{ env.repositories }}"
+          for REPOSITORY in "${repositories_array[@]}"; do
+            REPO_NAME=$(basename "$REPOSITORY")
+            echo "Checking out $REPOSITORY to repo/${{ matrix.directory }}/$REPO_NAME"
+            git clone https://github.com/"$REPOSITORY" "repo/${{ matrix.directory }}/$REPO_NAME" --depth=1
+          done
+
+      - name: Run Retriever
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        uses: FloBoJa/Palladio-ReverseEngineering-Retriever@main
+        with:
+          source_path: repo/${{ matrix.directory }}
+          rules: ${{ env.rules }}
+          analyze_vulnerabilities: ${{ github.event.inputs.analyzeVulnerabilities }}
+          snyk_token: ${{ secrets.SNYK_TOKEN }}
+          nist_nvd_token: ${{ secrets.NVD_TOKEN }}
+          benchmark: ${{ env.benchmark }}
+          rules_path: ${{ env.rules_path }}
+
+      - name: Download results
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        uses: actions/download-artifact@v3
+        with:
+          name: retriever
+          path: results
+
+      - name: Prepare upload
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        run: |
+          mkdir -p to_commit/${{ matrix.directory }}/model_re/pcm
+          mkdir -p to_commit/${{ matrix.directory }}/model_re/uml
+          mv results/repo/${{ matrix.directory }}/*.puml to_commit/${{ matrix.directory }}/model_re/uml
+          mv results/repo/${{ matrix.directory }}/*.md to_commit/${{ matrix.directory }}/model_re/
+          mv results/repo/${{ matrix.directory }}/* to_commit/${{ matrix.directory }}/model_re/pcm
+
+      - name: Render UML diagrams
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        run: |
+          sudo apt-get install graphviz
+          wget https://github.com/plantuml/plantuml/releases/download/v1.2023.13/plantuml-1.2023.13.jar -O plantuml.jar
+          shopt -s nullglob
+          for file in to_commit/${{ matrix.directory }}/model_re/uml/*.puml; do
+            [ -f "$file" ] || continue
+            java -jar plantuml.jar -tsvg "$file" || echo "Diagram description contains errors: ${file}"
+          done
+
+      - name: Update version
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        run: |
+          yq eval -i '.current_version = "${{ needs.collect_info.outputs.latest_version }}"' "benchmark/${{ matrix.directory }}/.retriever.yml"
+          mv "benchmark/${{ matrix.directory }}/.retriever.yml" to_commit/${{ matrix.directory }}/.retriever.yml
+
+      - name: Upload artifact
+        if: ${{ needs.collect_info.outputs.latest_version != env.current_version || inputs.overrideBenchmark == 'true' || inputs.analyzeVulnerabilities == 'true' }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: to_commit
+          path: to_commit
