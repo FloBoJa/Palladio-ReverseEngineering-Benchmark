@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: collect_info
     continue-on-error: true
-    if: ${{  }}
+    if: ${{ inputs.analyzeVulnerabilities != 'true' }}
     strategy:
       fail-fast: false
       matrix:
@@ -71,6 +71,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: collect_info
     continue-on-error: true
+    if: ${{ inputs.analyzeVulnerabilities == 'true' }}
     strategy:
       fail-fast: false
       max-parallel: 1
