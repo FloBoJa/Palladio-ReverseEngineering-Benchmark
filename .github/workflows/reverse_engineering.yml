@@ -53,6 +53,7 @@ jobs:
 
       - name: Force sequential execution for vulnerability analysis
         id: force_sequential
+        if: ${{ inputs.analyzeVulnerabilities == 'true' }}
         run: echo "value=1" >> $GITHUB_OUTPUT
 
   generate_pcm:
