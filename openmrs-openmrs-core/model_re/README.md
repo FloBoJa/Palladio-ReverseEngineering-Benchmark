@@ -1,25 +1,25 @@
 # [Retriever](https://github.com/PalladioSimulator/Palladio-ReverseEngineering-Retriever) Report
 | Version | Date |
 | ------- | ---- |
-| v5.2.0.202406051123 | Wed Jun  5 16:32:53 UTC 2024 |
+| v5.2.0.202406231355 | Sun Jun 23 14:02:51 UTC 2024 |
 
 ## Git repository information
 |      Attribute    | Value |
 | ----------------- | ----- |
 | Repository URL    | https://github.com/openmrs/openmrs-core |
 | Branch            | master |
-| Commit            | 6ee0ed56ba76af23553dc74c98682c92b17b230f |
-| Number of Commits | 12184 |
-| Stars             | 1351 |
+| Commit            | cca287a2bf631d1ff6d6cfbcc393fb6bdef8a5c0 |
+| Number of Commits | 12198 |
+| Stars             | 1360 |
 | Contributors      | 30 |
 
 |      Attribute    | Value |
 | ----------------- | ----- |
 | Repository URL    | https://github.com/openmrs/openmrs-module-webservices.rest |
 | Branch            | master |
-| Commit            | 6bd939a78628a7b46eb6240c88f1bc74a99ba80c |
-| Number of Commits | 1721 |
-| Stars             | 82 |
+| Commit            | ff78c3ab8adc3ca31485cb1f858ad16496c8475d |
+| Number of Commits | 1725 |
+| Stars             | 83 |
 | Contributors      | 30 |
 
 
@@ -28,17 +28,17 @@
 | --------- | ----- |
 | OS | Linux  |
 | Distro | Ubuntu 22.04.4 LTS x86_64  |
-| Kernel | 6.5.0-1021-azure  |
-| CPU | AMD EPYC 7763 (4) @ 3.243GHz  |
+| Kernel | 6.5.0-1022-azure  |
+| CPU | AMD EPYC 7763 (4) @ 3.244GHz  |
 | GPU | 00:08.0 Microsoft Corporation Hyper-V virtual VGA  |
-| Memory | 786MiB / 15981MiB  |
+| Memory | 795MiB / 15981MiB  |
 
 ## Retriever execution time
 | Metric | Time (seconds) |
 | --- | ---: |
-| Real CPU Time | 18.44 |
-| User CPU Time | 54.24 |
-| System CPU Time | 2.80 |
+| Real CPU Time | 25.26 |
+| User CPU Time | 60.17 |
+| System CPU Time | 2.87 |
 <!--
 Explainations:
 - __Real CPU Time__: actual time the command has run (can be less than total time spent in user and system mode for multi-threaded processes)
@@ -47,14 +47,14 @@ Explainations:
 -->
 
 ## Cloc analysis
-cloc v 1.90  T=9.91 s (235.2 files/s, 50262.2 lines/s)
+cloc v 1.90  T=9.76 s (239.0 files/s, 51091.4 lines/s)
 
 Language|files|blank|comment|code
 :-------|-------:|-------:|-------:|-------:
-Java|1874|47290|90854|190348
-XML|306|3185|2890|134446
+Java|1876|47325|90766|190658
+XML|305|3179|2879|134433
 SQL|5|918|741|5464
-Maven|21|319|105|4566
+Maven|21|319|105|4575
 JavaScript|21|542|1178|4346
 CSS|13|290|678|2049
 Velocity Template Language|19|109|2|1213
@@ -69,4 +69,4 @@ HTML|17|17|0|223
 Dockerfile|1|38|26|81
 CSV|2|0|0|2
 --------|--------|--------|--------|--------
-SUM:|2331|53608|96823|347769
+SUM:|2332|53637|96724|348075

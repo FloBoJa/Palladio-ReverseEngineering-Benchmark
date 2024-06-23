@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_MOSwmiNZEe-_r6ow1x_eHw">
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOAcuCNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_TaskController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOActCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/usertask Provider" providedInterface__OperationProvidedRole="_MOAcsiNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOActSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/ Provider" providedInterface__OperationProvidedRole="_MOAcsCNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOActiNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$2 Provider" providedInterface__OperationProvidedRole="_MN_1pSNZEe-_r6ow1x_eHw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_MOActyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_CommentsService Consumer" requiredInterface__OperationRequiredRole="_MOAcsyNZEe-_r6ow1x_eHw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNNLciNZEe-_r6ow1x_eHw" describedService__SEFF="_MHeW4CNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNL9WiNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNMkaSNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:LoopAction" id="_MNMkaSNZEe-_r6ow1x_eHw" entityName="@position: for (TaskDTO currentTask : tasks)" predecessor_AbstractAction="_MNL9WiNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNNLcCNZEe-_r6ow1x_eHw">
-        <bodyBehaviour_Loop id="_MNMkayNZEe-_r6ow1x_eHw">
-          <steps_Behaviour xsi:type="seff:StartAction" id="_MNMkYCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNMkZyNZEe-_r6ow1x_eHw"/>
-          <steps_Behaviour xsi:type="seff:BranchAction" id="_MNMkZyNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNMkYCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNMkaCNZEe-_r6ow1x_eHw">
-            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNMkZCNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-              <branchBehaviour_BranchTransition id="_MNMkZiNZEe-_r6ow1x_eHw">
-                <steps_Behaviour xsi:type="seff:StartAction" id="_MNMkYSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNMkYiNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:InternalAction" id="_MNMkYiNZEe-_r6ow1x_eHw" entityName="taskListToReturn.add(currentTask)" predecessor_AbstractAction="_MNMkYSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNMkYyNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:StopAction" id="_MNMkYyNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNMkYiNZEe-_r6ow1x_eHw"/>
-              </branchBehaviour_BranchTransition>
-              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentTask.getUserName().equalsIgnoreCase(userName))"/>
-            </branches_Branch>
-          </steps_Behaviour>
-          <steps_Behaviour xsi:type="seff:StopAction" id="_MNMkaCNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNMkZyNZEe-_r6ow1x_eHw"/>
-        </bodyBehaviour_Loop>
-        <iterationCount_LoopAction specification="1"/>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNNLcCNZEe-_r6ow1x_eHw" entityName="taskListToReturn" predecessor_AbstractAction="_MNMkaSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNNLcSNZEe-_r6ow1x_eHw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.taskListToReturn"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="taskListToReturn"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNNLcSNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNNLcCNZEe-_r6ow1x_eHw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNOZlyNZEe-_r6ow1x_eHw" describedService__SEFF="_MGqekCNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNOZlCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNOZlSNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNOZlSNZEe-_r6ow1x_eHw" entityName="tasks" predecessor_AbstractAction="_MNOZlCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNOZliNZEe-_r6ow1x_eHw">
+<repository:Repository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:seff="http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2" xmlns:stoex="http://sdq.ipd.uka.de/StochasticExpressions/2.2" id="_M1tACjFpEe-c8_8bjEOUhA">
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1Y2-zFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_CommentsService">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1Y2-TFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_CommentsService Provider" providedInterface__OperationProvidedRole="_M1Y2-DFpEe-c8_8bjEOUhA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_M1Y2-jFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Consumer" requiredInterface__OperationRequiredRole="_M1Y28jFpEe-c8_8bjEOUhA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1ZeAzFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_TaskController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1Y2_DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/ Provider" providedInterface__OperationProvidedRole="_M1Y28TFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1ZeADFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/usertask Provider" providedInterface__OperationProvidedRole="_M1Y29zFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1ZeATFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$4 Provider" providedInterface__OperationProvidedRole="_M1Y29jFpEe-c8_8bjEOUhA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_M1ZeAjFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_CommentsService Consumer" requiredInterface__OperationRequiredRole="_M1Y2-DFpEe-c8_8bjEOUhA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0mMxzFpEe-c8_8bjEOUhA" describedService__SEFF="_MtxzEDFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0mMxDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0mMxTFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0mMxTFpEe-c8_8bjEOUhA" entityName="tasks" predecessor_AbstractAction="_M0mMxDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0mMxjFpEe-c8_8bjEOUhA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.tasks"/>
@@ -48,37 +21,68 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNOZliNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNOZlSNZEe-_r6ow1x_eHw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0mMxjFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0mMxTFpEe-c8_8bjEOUhA"/>
     </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNOZkiNZEe-_r6ow1x_eHw" describedService__SEFF="_MHdIwCNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNNLdCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNNygSNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:LoopAction" id="_MNNygSNZEe-_r6ow1x_eHw" entityName="@position: for (TaskDTO currentTask : tasks)" predecessor_AbstractAction="_MNNLdCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNNyiiNZEe-_r6ow1x_eHw">
-        <bodyBehaviour_Loop id="_MNNygyNZEe-_r6ow1x_eHw">
-          <steps_Behaviour xsi:type="seff:StartAction" id="_MNNLdSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNNLeyNZEe-_r6ow1x_eHw"/>
-          <steps_Behaviour xsi:type="seff:BranchAction" id="_MNNLeyNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNNLdSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNNygCNZEe-_r6ow1x_eHw">
-            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNNLeCNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-              <branchBehaviour_BranchTransition id="_MNNLeiNZEe-_r6ow1x_eHw">
-                <steps_Behaviour xsi:type="seff:StartAction" id="_MNNLdiNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNNLdyNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:StopAction" id="_MNNLdyNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNNLdiNZEe-_r6ow1x_eHw"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0opAjFpEe-c8_8bjEOUhA" describedService__SEFF="_MuioEDFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0mz0TFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0na6DFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_M0na6DFpEe-c8_8bjEOUhA" entityName="@position: for (TaskDTO currentTask : tasks)" predecessor_AbstractAction="_M0mz0TFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0opADFpEe-c8_8bjEOUhA">
+        <bodyBehaviour_Loop id="_M0oB8DFpEe-c8_8bjEOUhA">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_M0mz0jFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0na5jFpEe-c8_8bjEOUhA"/>
+          <steps_Behaviour xsi:type="seff:BranchAction" id="_M0na5jFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0mz0jFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0na5zFpEe-c8_8bjEOUhA">
+            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0na4zFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+              <branchBehaviour_BranchTransition id="_M0na5TFpEe-c8_8bjEOUhA">
+                <steps_Behaviour xsi:type="seff:StartAction" id="_M0na4DFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0na4TFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:InternalAction" id="_M0na4TFpEe-c8_8bjEOUhA" entityName="taskListToReturn.add(currentTask)" predecessor_AbstractAction="_M0na4DFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0na4jFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:StopAction" id="_M0na4jFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0na4TFpEe-c8_8bjEOUhA"/>
+              </branchBehaviour_BranchTransition>
+              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentTask.getUserName().equalsIgnoreCase(userName))"/>
+            </branches_Branch>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_M0na5zFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0na5jFpEe-c8_8bjEOUhA"/>
+        </bodyBehaviour_Loop>
+        <iterationCount_LoopAction specification="1"/>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0opADFpEe-c8_8bjEOUhA" entityName="taskListToReturn" predecessor_AbstractAction="_M0na6DFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0opATFpEe-c8_8bjEOUhA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.taskListToReturn"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="taskListToReturn"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0opATFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0opADFpEe-c8_8bjEOUhA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0p3KTFpEe-c8_8bjEOUhA" describedService__SEFF="_MukdQTFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0opBDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0pQGDFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_M0pQGDFpEe-c8_8bjEOUhA" entityName="@position: for (TaskDTO currentTask : tasks)" predecessor_AbstractAction="_M0opBDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0p3JjFpEe-c8_8bjEOUhA">
+        <bodyBehaviour_Loop id="_M0pQGjFpEe-c8_8bjEOUhA">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_M0pQEDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0pQFjFpEe-c8_8bjEOUhA"/>
+          <steps_Behaviour xsi:type="seff:BranchAction" id="_M0pQFjFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0pQEDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0pQFzFpEe-c8_8bjEOUhA">
+            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0pQEzFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+              <branchBehaviour_BranchTransition id="_M0pQFTFpEe-c8_8bjEOUhA">
+                <steps_Behaviour xsi:type="seff:StartAction" id="_M0pQETFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0pQEjFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:StopAction" id="_M0pQEjFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0pQETFpEe-c8_8bjEOUhA"/>
               </branchBehaviour_BranchTransition>
               <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentTask.getTaskId().equalsIgnoreCase(taskId))"/>
             </branches_Branch>
           </steps_Behaviour>
-          <steps_Behaviour xsi:type="seff:StopAction" id="_MNNygCNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNNLeyNZEe-_r6ow1x_eHw"/>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_M0pQFzFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0pQFjFpEe-c8_8bjEOUhA"/>
         </bodyBehaviour_Loop>
         <iterationCount_LoopAction specification="1"/>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:BranchAction" id="_MNNyiiNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNNygSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNOZkCNZEe-_r6ow1x_eHw">
-        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNNyhyNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-          <branchBehaviour_BranchTransition id="_MNNyiSNZEe-_r6ow1x_eHw">
-            <steps_Behaviour xsi:type="seff:StartAction" id="_MNNyhCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNNyhSNZEe-_r6ow1x_eHw"/>
-            <steps_Behaviour xsi:type="seff:InternalAction" id="_MNNyhSNZEe-_r6ow1x_eHw" entityName="taskToReturn.setComments(this.commentsService.getCommentsForTask(taskId))" predecessor_AbstractAction="_MNNyhCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNNyhiNZEe-_r6ow1x_eHw"/>
-            <steps_Behaviour xsi:type="seff:StopAction" id="_MNNyhiNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNNyhSNZEe-_r6ow1x_eHw"/>
+      <steps_Behaviour xsi:type="seff:BranchAction" id="_M0p3JjFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0pQGDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0p3JzFpEe-c8_8bjEOUhA">
+        <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0p3IzFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+          <branchBehaviour_BranchTransition id="_M0p3JTFpEe-c8_8bjEOUhA">
+            <steps_Behaviour xsi:type="seff:StartAction" id="_M0p3IDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0p3ITFpEe-c8_8bjEOUhA"/>
+            <steps_Behaviour xsi:type="seff:InternalAction" id="_M0p3ITFpEe-c8_8bjEOUhA" entityName="taskToReturn.setComments(this.commentsService.getCommentsForTask(taskId))" predecessor_AbstractAction="_M0p3IDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0p3IjFpEe-c8_8bjEOUhA"/>
+            <steps_Behaviour xsi:type="seff:StopAction" id="_M0p3IjFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0p3ITFpEe-c8_8bjEOUhA"/>
           </branchBehaviour_BranchTransition>
           <branchCondition_GuardedBranchTransition specification="@position: Condition: if(taskToReturn != null)"/>
         </branches_Branch>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNOZkCNZEe-_r6ow1x_eHw" entityName="taskToReturn" predecessor_AbstractAction="_MNNyiiNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNOZkSNZEe-_r6ow1x_eHw">
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0p3JzFpEe-c8_8bjEOUhA" entityName="taskToReturn" predecessor_AbstractAction="_M0p3JjFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0p3KDFpEe-c8_8bjEOUhA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.taskToReturn"/>
@@ -88,123 +92,15 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNOZkSNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNOZkCNZEe-_r6ow1x_eHw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0p3KDFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0p3JzFpEe-c8_8bjEOUhA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOIYhSNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Provider">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOIYhCNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Provider" providedInterface__OperationProvidedRole="_MN_1pyNZEe-_r6ow1x_eHw"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOIYiCNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_CommentsService">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOIYhiNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_CommentsService Provider" providedInterface__OperationProvidedRole="_MOAcsyNZEe-_r6ow1x_eHw"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_MOIYhyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Consumer" requiredInterface__OperationRequiredRole="_MN_1pyNZEe-_r6ow1x_eHw"/>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOIYiiNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_comments_apis_CommentsController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOIYiSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/comments Provider" providedInterface__OperationProvidedRole="_MN_1qSNZEe-_r6ow1x_eHw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNKIIiNZEe-_r6ow1x_eHw" describedService__SEFF="_MHdIwyNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MH3_gSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNHr4CNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:LoopAction" id="_MNHr4CNZEe-_r6ow1x_eHw" entityName="@position: for (CommentDTO currentComment : comments)" predecessor_AbstractAction="_MH3_gSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNKIICNZEe-_r6ow1x_eHw">
-        <bodyBehaviour_Loop id="_MNHr4iNZEe-_r6ow1x_eHw">
-          <steps_Behaviour xsi:type="seff:StartAction" id="_MNCMUCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNHE0SNZEe-_r6ow1x_eHw"/>
-          <steps_Behaviour xsi:type="seff:BranchAction" id="_MNHE0SNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNCMUCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNHE0iNZEe-_r6ow1x_eHw">
-            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNGdwyNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-              <branchBehaviour_BranchTransition id="_MNHE0CNZEe-_r6ow1x_eHw">
-                <steps_Behaviour xsi:type="seff:StartAction" id="_MNDacCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNGdwCNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:BranchAction" id="_MNGdwCNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNDacCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNGdwSNZEe-_r6ow1x_eHw">
-                  <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNFPoCNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-                    <branchBehaviour_BranchTransition id="_MNF2sCNZEe-_r6ow1x_eHw">
-                      <steps_Behaviour xsi:type="seff:StartAction" id="_MNDacSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNEokCNZEe-_r6ow1x_eHw"/>
-                      <steps_Behaviour xsi:type="seff:InternalAction" id="_MNEokCNZEe-_r6ow1x_eHw" entityName="LOGGER.info(String.format(&quot;Found matching comments for task [%s] with comment [%s]&quot;,taskId,currentComment.getComment()))" predecessor_AbstractAction="_MNDacSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNEokSNZEe-_r6ow1x_eHw"/>
-                      <steps_Behaviour xsi:type="seff:StopAction" id="_MNEokSNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNEokCNZEe-_r6ow1x_eHw"/>
-                    </branchBehaviour_BranchTransition>
-                    <branchCondition_GuardedBranchTransition specification="@position: Condition: if(LOGGER.isLoggable(Level.INFO))"/>
-                  </branches_Branch>
-                </steps_Behaviour>
-                <steps_Behaviour xsi:type="seff:InternalAction" id="_MNGdwSNZEe-_r6ow1x_eHw" entityName="commentListToReturn.add(currentComment)" predecessor_AbstractAction="_MNGdwCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNGdwiNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:StopAction" id="_MNGdwiNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNGdwSNZEe-_r6ow1x_eHw"/>
-              </branchBehaviour_BranchTransition>
-              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentComment.getTaskId().equalsIgnoreCase(taskId))"/>
-            </branches_Branch>
-          </steps_Behaviour>
-          <steps_Behaviour xsi:type="seff:StopAction" id="_MNHE0iNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNHE0SNZEe-_r6ow1x_eHw"/>
-        </bodyBehaviour_Loop>
-        <iterationCount_LoopAction specification="1"/>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNKIICNZEe-_r6ow1x_eHw" entityName="commentListToReturn" predecessor_AbstractAction="_MNHr4CNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNKIISNZEe-_r6ow1x_eHw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.commentListToReturn"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="commentListToReturn"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNKIISNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNKIICNZEe-_r6ow1x_eHw"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOK0wSNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_auth_api_AuthUserController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOK0wCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$5 Provider" providedInterface__OperationProvidedRole="_MN_1qCNZEe-_r6ow1x_eHw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNL9WCNZEe-_r6ow1x_eHw" describedService__SEFF="_MHe98SNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNL9VSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNL9ViNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNL9ViNZEe-_r6ow1x_eHw" entityName="user" predecessor_AbstractAction="_MNL9VSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNL9VyNZEe-_r6ow1x_eHw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.user"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="user"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNL9VyNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNL9ViNZEe-_r6ow1x_eHw"/>
-    </serviceEffectSpecifications__BasicComponent>
-  </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_MOMp_CNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_user_api_UserController">
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOMp-iNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$4 Provider" providedInterface__OperationProvidedRole="_MOAcsSNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOMp-yNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$3 Provider" providedInterface__OperationProvidedRole="_MN_1piNZEe-_r6ow1x_eHw"/>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNL9UyNZEe-_r6ow1x_eHw" describedService__SEFF="_MHeW5SNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNKvNiNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNLWTiNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:LoopAction" id="_MNLWTiNZEe-_r6ow1x_eHw" entityName="@position: for (UserDTO currentUser : users)" predecessor_AbstractAction="_MNKvNiNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNL9USNZEe-_r6ow1x_eHw">
-        <bodyBehaviour_Loop id="_MNL9UCNZEe-_r6ow1x_eHw">
-          <steps_Behaviour xsi:type="seff:StartAction" id="_MNKvNyNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNLWTCNZEe-_r6ow1x_eHw"/>
-          <steps_Behaviour xsi:type="seff:BranchAction" id="_MNLWTCNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNKvNyNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNLWTSNZEe-_r6ow1x_eHw">
-            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNLWSSNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-              <branchBehaviour_BranchTransition id="_MNLWSyNZEe-_r6ow1x_eHw">
-                <steps_Behaviour xsi:type="seff:StartAction" id="_MNLWQCNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNLWRyNZEe-_r6ow1x_eHw"/>
-                <steps_Behaviour xsi:type="seff:BranchAction" id="_MNLWRyNZEe-_r6ow1x_eHw" entityName="If Branch" predecessor_AbstractAction="_MNLWQCNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNLWSCNZEe-_r6ow1x_eHw">
-                  <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_MNLWRCNZEe-_r6ow1x_eHw" entityName="Guarded Branch Transition">
-                    <branchBehaviour_BranchTransition id="_MNLWRiNZEe-_r6ow1x_eHw">
-                      <steps_Behaviour xsi:type="seff:StartAction" id="_MNLWQSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNLWQiNZEe-_r6ow1x_eHw"/>
-                      <steps_Behaviour xsi:type="seff:InternalAction" id="_MNLWQiNZEe-_r6ow1x_eHw" entityName="LOGGER.info(String.format(&quot;Found matching user: %s&quot;,userDtoToReturn.toString()))" predecessor_AbstractAction="_MNLWQSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNLWQyNZEe-_r6ow1x_eHw"/>
-                      <steps_Behaviour xsi:type="seff:StopAction" id="_MNLWQyNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNLWQiNZEe-_r6ow1x_eHw"/>
-                    </branchBehaviour_BranchTransition>
-                    <branchCondition_GuardedBranchTransition specification="@position: Condition: if(LOGGER.isLoggable(Level.INFO))"/>
-                  </branches_Branch>
-                </steps_Behaviour>
-                <steps_Behaviour xsi:type="seff:StopAction" id="_MNLWSCNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNLWRyNZEe-_r6ow1x_eHw"/>
-              </branchBehaviour_BranchTransition>
-              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentUser.getUserName().equalsIgnoreCase(userName))"/>
-            </branches_Branch>
-          </steps_Behaviour>
-          <steps_Behaviour xsi:type="seff:StopAction" id="_MNLWTSNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNLWTCNZEe-_r6ow1x_eHw"/>
-        </bodyBehaviour_Loop>
-        <iterationCount_LoopAction specification="1"/>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNL9USNZEe-_r6ow1x_eHw" entityName="userDtoToReturn" predecessor_AbstractAction="_MNLWTiNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNL9UiNZEe-_r6ow1x_eHw">
-        <localVariableUsages_SetVariableAction>
-          <variableCharacterisation_VariableUsage type="VALUE">
-            <specification_VariableCharacterisation specification="PrimitiveType.userDtoToReturn"/>
-          </variableCharacterisation_VariableUsage>
-          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
-            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="userDtoToReturn"/>
-          </namedReference__VariableUsage>
-        </localVariableUsages_SetVariableAction>
-      </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNL9UiNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNL9USNZEe-_r6ow1x_eHw"/>
-    </serviceEffectSpecifications__BasicComponent>
-    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_MNKvNCNZEe-_r6ow1x_eHw" describedService__SEFF="_MHdv0SNZEe-_r6ow1x_eHw">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_MNKvMSNZEe-_r6ow1x_eHw" entityName="Start Action" successor_AbstractAction="_MNKvMiNZEe-_r6ow1x_eHw"/>
-      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_MNKvMiNZEe-_r6ow1x_eHw" entityName="users" predecessor_AbstractAction="_MNKvMSNZEe-_r6ow1x_eHw" successor_AbstractAction="_MNKvMyNZEe-_r6ow1x_eHw">
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1gyzzFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_user_api_UserController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1gyzTFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$5 Provider" providedInterface__OperationProvidedRole="_M1Y28DFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1gyzjFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$3 Provider" providedInterface__OperationProvidedRole="_M1Y29DFpEe-c8_8bjEOUhA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0YKUjFpEe-c8_8bjEOUhA" describedService__SEFF="_MulEUjFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_Mu-F4TFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0YKUDFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0YKUDFpEe-c8_8bjEOUhA" entityName="users" predecessor_AbstractAction="_Mu-F4TFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0YKUTFpEe-c8_8bjEOUhA">
         <localVariableUsages_SetVariableAction>
           <variableCharacterisation_VariableUsage type="VALUE">
             <specification_VariableCharacterisation specification="PrimitiveType.users"/>
@@ -214,80 +110,184 @@
           </namedReference__VariableUsage>
         </localVariableUsages_SetVariableAction>
       </steps_Behaviour>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_MNKvMyNZEe-_r6ow1x_eHw" entityName="Stop Action" predecessor_AbstractAction="_MNKvMiNZEe-_r6ow1x_eHw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0YKUTFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0YKUDFpEe-c8_8bjEOUhA"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0e4BTFpEe-c8_8bjEOUhA" describedService__SEFF="_Muj2MzFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0YxYTFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0e4ADFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_M0e4ADFpEe-c8_8bjEOUhA" entityName="@position: for (UserDTO currentUser : users)" predecessor_AbstractAction="_M0YxYTFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0e4AzFpEe-c8_8bjEOUhA">
+        <bodyBehaviour_Loop id="_M0e4AjFpEe-c8_8bjEOUhA">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_M0ZYcDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0eQ9DFpEe-c8_8bjEOUhA"/>
+          <steps_Behaviour xsi:type="seff:BranchAction" id="_M0eQ9DFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0ZYcDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0eQ9TFpEe-c8_8bjEOUhA">
+            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0eQ8TFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+              <branchBehaviour_BranchTransition id="_M0eQ8zFpEe-c8_8bjEOUhA">
+                <steps_Behaviour xsi:type="seff:StartAction" id="_M0ZYcTFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0dp4DFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:BranchAction" id="_M0dp4DFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0ZYcTFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0eQ8DFpEe-c8_8bjEOUhA">
+                  <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0b0sDFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+                    <branchBehaviour_BranchTransition id="_M0dC0DFpEe-c8_8bjEOUhA">
+                      <steps_Behaviour xsi:type="seff:StartAction" id="_M0Z_gDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0bNoDFpEe-c8_8bjEOUhA"/>
+                      <steps_Behaviour xsi:type="seff:InternalAction" id="_M0bNoDFpEe-c8_8bjEOUhA" entityName="LOGGER.info(String.format(&quot;Found matching user: %s&quot;,userDtoToReturn.toString()))" predecessor_AbstractAction="_M0Z_gDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0bNoTFpEe-c8_8bjEOUhA"/>
+                      <steps_Behaviour xsi:type="seff:StopAction" id="_M0bNoTFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0bNoDFpEe-c8_8bjEOUhA"/>
+                    </branchBehaviour_BranchTransition>
+                    <branchCondition_GuardedBranchTransition specification="@position: Condition: if(LOGGER.isLoggable(Level.INFO))"/>
+                  </branches_Branch>
+                </steps_Behaviour>
+                <steps_Behaviour xsi:type="seff:StopAction" id="_M0eQ8DFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0dp4DFpEe-c8_8bjEOUhA"/>
+              </branchBehaviour_BranchTransition>
+              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentUser.getUserName().equalsIgnoreCase(userName))"/>
+            </branches_Branch>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_M0eQ9TFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0eQ9DFpEe-c8_8bjEOUhA"/>
+        </bodyBehaviour_Loop>
+        <iterationCount_LoopAction specification="1"/>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0e4AzFpEe-c8_8bjEOUhA" entityName="userDtoToReturn" predecessor_AbstractAction="_M0e4ADFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0e4BDFpEe-c8_8bjEOUhA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.userDtoToReturn"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="userDtoToReturn"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0e4BDFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0e4AzFpEe-c8_8bjEOUhA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_MOSJgSNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_auth_api_AuthUserController">
-    <assemblyContexts__ComposedStructure id="_MOSwliNZEe-_r6ow1x_eHw" encapsulatedComponent__AssemblyContext="_MOK0wSNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlxCNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOK0wCNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJgCNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwliNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJgCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$5 Provider" providedInterface__OperationProvidedRole="_MN_1qCNZEe-_r6ow1x_eHw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1lrSTFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_comments_apis_CommentsController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1lrSDFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/comments Provider" providedInterface__OperationProvidedRole="_M1Y29TFpEe-c8_8bjEOUhA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0jwgTFpEe-c8_8bjEOUhA" describedService__SEFF="_MukdRDFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0e4BzFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0h7UzFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:LoopAction" id="_M0h7UzFpEe-c8_8bjEOUhA" entityName="@position: for (CommentDTO currentComment : comments)" predecessor_AbstractAction="_M0e4BzFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0jJcDFpEe-c8_8bjEOUhA">
+        <bodyBehaviour_Loop id="_M0h7VTFpEe-c8_8bjEOUhA">
+          <steps_Behaviour xsi:type="seff:StartAction" id="_M0ffEDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0h7UTFpEe-c8_8bjEOUhA"/>
+          <steps_Behaviour xsi:type="seff:BranchAction" id="_M0h7UTFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0ffEDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0h7UjFpEe-c8_8bjEOUhA">
+            <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0hUSDFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+              <branchBehaviour_BranchTransition id="_M0h7UDFpEe-c8_8bjEOUhA">
+                <steps_Behaviour xsi:type="seff:StartAction" id="_M0ffETFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0hURTFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:BranchAction" id="_M0hURTFpEe-c8_8bjEOUhA" entityName="If Branch" predecessor_AbstractAction="_M0ffETFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0hURjFpEe-c8_8bjEOUhA">
+                  <branches_Branch xsi:type="seff:GuardedBranchTransition" id="_M0hUQjFpEe-c8_8bjEOUhA" entityName="Guarded Branch Transition">
+                    <branchBehaviour_BranchTransition id="_M0hURDFpEe-c8_8bjEOUhA">
+                      <steps_Behaviour xsi:type="seff:StartAction" id="_M0gGIDFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0hUQDFpEe-c8_8bjEOUhA"/>
+                      <steps_Behaviour xsi:type="seff:InternalAction" id="_M0hUQDFpEe-c8_8bjEOUhA" entityName="LOGGER.info(String.format(&quot;Found matching comments for task [%s] with comment [%s]&quot;,taskId,currentComment.getComment()))" predecessor_AbstractAction="_M0gGIDFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0hUQTFpEe-c8_8bjEOUhA"/>
+                      <steps_Behaviour xsi:type="seff:StopAction" id="_M0hUQTFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0hUQDFpEe-c8_8bjEOUhA"/>
+                    </branchBehaviour_BranchTransition>
+                    <branchCondition_GuardedBranchTransition specification="@position: Condition: if(LOGGER.isLoggable(Level.INFO))"/>
+                  </branches_Branch>
+                </steps_Behaviour>
+                <steps_Behaviour xsi:type="seff:InternalAction" id="_M0hURjFpEe-c8_8bjEOUhA" entityName="commentListToReturn.add(currentComment)" predecessor_AbstractAction="_M0hURTFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0hURzFpEe-c8_8bjEOUhA"/>
+                <steps_Behaviour xsi:type="seff:StopAction" id="_M0hURzFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0hURjFpEe-c8_8bjEOUhA"/>
+              </branchBehaviour_BranchTransition>
+              <branchCondition_GuardedBranchTransition specification="@position: Condition: if(currentComment.getTaskId().equalsIgnoreCase(taskId))"/>
+            </branches_Branch>
+          </steps_Behaviour>
+          <steps_Behaviour xsi:type="seff:StopAction" id="_M0h7UjFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0h7UTFpEe-c8_8bjEOUhA"/>
+        </bodyBehaviour_Loop>
+        <iterationCount_LoopAction specification="1"/>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0jJcDFpEe-c8_8bjEOUhA" entityName="commentListToReturn" predecessor_AbstractAction="_M0h7UzFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0jwgDFpEe-c8_8bjEOUhA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.commentListToReturn"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="commentListToReturn"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0jwgDFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0jJcDFpEe-c8_8bjEOUhA"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_MOSJgyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_comments_apis_CommentsController">
-    <assemblyContexts__ComposedStructure id="_MOSwmCNZEe-_r6ow1x_eHw" encapsulatedComponent__AssemblyContext="_MOIYiiNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlwyNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOIYiSNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJgiNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwmCNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJgiNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/comments Provider" providedInterface__OperationProvidedRole="_MN_1qSNZEe-_r6ow1x_eHw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1oHhTFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Provider">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1oHhDFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate Provider" providedInterface__OperationProvidedRole="_M1Y28jFpEe-c8_8bjEOUhA"/>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_MOSJhyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis">
-    <assemblyContexts__ComposedStructure id="_MOSwkCNZEe-_r6ow1x_eHw" encapsulatedComponent__AssemblyContext="_MOIYiCNZEe-_r6ow1x_eHw"/>
-    <assemblyContexts__ComposedStructure id="_MOSwkiNZEe-_r6ow1x_eHw" encapsulatedComponent__AssemblyContext="_MOAcuCNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_MOT-sCNZEe-_r6ow1x_eHw" requiringAssemblyContext_AssemblyConnector="_MOSwkiNZEe-_r6ow1x_eHw" providingAssemblyContext_AssemblyConnector="_MOSwkCNZEe-_r6ow1x_eHw" providedRole_AssemblyConnector="_MOIYhiNZEe-_r6ow1x_eHw" requiredRole_AssemblyConnector="_MOActyNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlwCNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOActCNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJhSNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwkiNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlxSNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOActiNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJhiNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwkiNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlxiNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOActSNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJhCNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwkiNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJhCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/ Provider" providedInterface__OperationProvidedRole="_MOAcsCNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJhSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/usertask Provider" providedInterface__OperationProvidedRole="_MOAcsiNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJhiNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$2 Provider" providedInterface__OperationProvidedRole="_MN_1pSNZEe-_r6ow1x_eHw"/>
+  <components__Repository xsi:type="repository:BasicComponent" id="_M1oHhzFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_auth_api_AuthUserController">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1oHhjFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$2 Provider" providedInterface__OperationProvidedRole="_M1Y28zFpEe-c8_8bjEOUhA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_M0mMwjFpEe-c8_8bjEOUhA" describedService__SEFF="_MujPJDFpEe-c8_8bjEOUhA">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_M0kXkTFpEe-c8_8bjEOUhA" entityName="Start Action" successor_AbstractAction="_M0mMwDFpEe-c8_8bjEOUhA"/>
+      <steps_Behaviour xsi:type="seff:SetVariableAction" id="_M0mMwDFpEe-c8_8bjEOUhA" entityName="user" predecessor_AbstractAction="_M0kXkTFpEe-c8_8bjEOUhA" successor_AbstractAction="_M0mMwTFpEe-c8_8bjEOUhA">
+        <localVariableUsages_SetVariableAction>
+          <variableCharacterisation_VariableUsage type="VALUE">
+            <specification_VariableCharacterisation specification="PrimitiveType.user"/>
+          </variableCharacterisation_VariableUsage>
+          <namedReference__VariableUsage xsi:type="stoex:NamespaceReference" referenceName="PrimitiveType">
+            <innerReference_NamespaceReference xsi:type="stoex:VariableReference" referenceName="user"/>
+          </namedReference__VariableUsage>
+        </localVariableUsages_SetVariableAction>
+      </steps_Behaviour>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_M0mMwTFpEe-c8_8bjEOUhA" entityName="Stop Action" predecessor_AbstractAction="_M0mMwDFpEe-c8_8bjEOUhA"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:CompositeComponent" id="_MOSJiiNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_user_api_UserController">
-    <assemblyContexts__ComposedStructure id="_MOSwlCNZEe-_r6ow1x_eHw" encapsulatedComponent__AssemblyContext="_MOMp_CNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlwSNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOMp-yNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJiSNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwlCNZEe-_r6ow1x_eHw"/>
-    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_MOUlwiNZEe-_r6ow1x_eHw" innerProvidedRole_ProvidedDelegationConnector="_MOMp-iNZEe-_r6ow1x_eHw" outerProvidedRole_ProvidedDelegationConnector="_MOSJiCNZEe-_r6ow1x_eHw" assemblyContext_ProvidedDelegationConnector="_MOSwlCNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJiCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$4 Provider" providedInterface__OperationProvidedRole="_MOAcsSNZEe-_r6ow1x_eHw"/>
-    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_MOSJiSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$3 Provider" providedInterface__OperationProvidedRole="_MN_1piNZEe-_r6ow1x_eHw"/>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_M1rx4jFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_user_api_UserController">
+    <assemblyContexts__ComposedStructure id="_M1tAAjFpEe-c8_8bjEOUhA" encapsulatedComponent__AssemblyContext="_M1gyzzFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcQjFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1gyzTFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1rx4TFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tAAjFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcRjFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1gyzjFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1rx4DFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tAAjFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1rx4DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$3 Provider" providedInterface__OperationProvidedRole="_M1Y29DFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1rx4TFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$5 Provider" providedInterface__OperationProvidedRole="_M1Y28DFpEe-c8_8bjEOUhA"/>
   </components__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MN_1pSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$2">
-    <signatures__OperationInterface id="_MHdIwCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$2" returnType__OperationSignature="_MHchsCNZEe-_r6ow1x_eHw">
+  <components__Repository xsi:type="repository:CompositeComponent" id="_M1sY8TFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_auth_api_AuthUserController">
+    <assemblyContexts__ComposedStructure id="_M1tACDFpEe-c8_8bjEOUhA" encapsulatedComponent__AssemblyContext="_M1oHhzFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcRDFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1oHhjFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1sY8DFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tACDFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1sY8DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$2 Provider" providedInterface__OperationProvidedRole="_M1Y28zFpEe-c8_8bjEOUhA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_M1sY9TFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis">
+    <assemblyContexts__ComposedStructure id="_M1tAADFpEe-c8_8bjEOUhA" encapsulatedComponent__AssemblyContext="_M1Y2-zFpEe-c8_8bjEOUhA"/>
+    <assemblyContexts__ComposedStructure id="_M1tABjFpEe-c8_8bjEOUhA" encapsulatedComponent__AssemblyContext="_M1ZeAzFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_M1u1MDFpEe-c8_8bjEOUhA" requiringAssemblyContext_AssemblyConnector="_M1tABjFpEe-c8_8bjEOUhA" providingAssemblyContext_AssemblyConnector="_M1tAADFpEe-c8_8bjEOUhA" providedRole_AssemblyConnector="_M1Y2-TFpEe-c8_8bjEOUhA" requiredRole_AssemblyConnector="_M1ZeAjFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcQDFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1ZeATFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1sY9DFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tABjFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcQTFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1ZeADFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1sY8zFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tABjFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcQzFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1Y2_DFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1sY8jFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tABjFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1sY8jFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/ Provider" providedInterface__OperationProvidedRole="_M1Y28TFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1sY8zFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/usertask Provider" providedInterface__OperationProvidedRole="_M1Y29zFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1sY9DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$4 Provider" providedInterface__OperationProvidedRole="_M1Y29jFpEe-c8_8bjEOUhA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:CompositeComponent" id="_M1sY9zFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_comments_apis_CommentsController">
+    <assemblyContexts__ComposedStructure id="_M1tABDFpEe-c8_8bjEOUhA" encapsulatedComponent__AssemblyContext="_M1lrSTFpEe-c8_8bjEOUhA"/>
+    <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_M1vcRTFpEe-c8_8bjEOUhA" innerProvidedRole_ProvidedDelegationConnector="_M1lrSDFpEe-c8_8bjEOUhA" outerProvidedRole_ProvidedDelegationConnector="_M1sY9jFpEe-c8_8bjEOUhA" assemblyContext_ProvidedDelegationConnector="_M1tABDFpEe-c8_8bjEOUhA"/>
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_M1sY9jFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/comments Provider" providedInterface__OperationProvidedRole="_M1Y29TFpEe-c8_8bjEOUhA"/>
+  </components__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y28DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$5">
+    <signatures__OperationInterface id="_MulEUjFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$5" returnType__OperationSignature="_Mtwk8DFpEe-c8_8bjEOUhA"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y28TFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/">
+    <signatures__OperationInterface id="_MtxzEDFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/" returnType__OperationSignature="_Mtwk8DFpEe-c8_8bjEOUhA"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y28jFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y28zFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$2">
+    <signatures__OperationInterface id="_MujPJDFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$2" returnType__OperationSignature="_MujPIzFpEe-c8_8bjEOUhA">
+      <parameters__OperationSignature dataType__Parameter="_MujPIzFpEe-c8_8bjEOUhA" parameterName="Principal" modifier__Parameter="in"/>
+    </signatures__OperationInterface>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y29DFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$3">
+    <signatures__OperationInterface id="_Muj2MzFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$3" returnType__OperationSignature="_Muj2MjFpEe-c8_8bjEOUhA">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MN_1piNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$3">
-    <signatures__OperationInterface id="_MHdv0SNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$3" returnType__OperationSignature="_MGpQcCNZEe-_r6ow1x_eHw"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MN_1pyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_OAuth2RestTemplate"/>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MN_1qCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$5">
-    <signatures__OperationInterface id="_MHe98SNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$5" returnType__OperationSignature="_MHe98CNZEe-_r6ow1x_eHw">
-      <parameters__OperationSignature dataType__Parameter="_MHe98CNZEe-_r6ow1x_eHw" parameterName="Principal" modifier__Parameter="in"/>
-    </signatures__OperationInterface>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MN_1qSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/comments">
-    <signatures__OperationInterface id="_MHdIwyNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/comments" returnType__OperationSignature="_MGpQcCNZEe-_r6ow1x_eHw">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y29TFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/comments">
+    <signatures__OperationInterface id="_MukdRDFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/comments" returnType__OperationSignature="_Mtwk8DFpEe-c8_8bjEOUhA">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MOAcsCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/">
-    <signatures__OperationInterface id="_MGqekCNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/" returnType__OperationSignature="_MGpQcCNZEe-_r6ow1x_eHw"/>
-  </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MOAcsSNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$4">
-    <signatures__OperationInterface id="_MHeW5SNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/$4" returnType__OperationSignature="_MHeW5CNZEe-_r6ow1x_eHw">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y29jFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$4">
+    <signatures__OperationInterface id="_MukdQTFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/$4" returnType__OperationSignature="_MukdQDFpEe-c8_8bjEOUhA">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MOAcsiNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/usertask">
-    <signatures__OperationInterface id="_MHeW4CNZEe-_r6ow1x_eHw" entityName="SPRING-APPLICATION/usertask" returnType__OperationSignature="_MGpQcCNZEe-_r6ow1x_eHw">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y29zFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/usertask">
+    <signatures__OperationInterface id="_MuioEDFpEe-c8_8bjEOUhA" entityName="SPRING-APPLICATION/usertask" returnType__OperationSignature="_Mtwk8DFpEe-c8_8bjEOUhA">
       <parameters__OperationSignature parameterName="String" modifier__Parameter="in">
         <dataType__Parameter xsi:type="repository:PrimitiveDataType" href="pathmap://PCM_MODELS/PrimitiveTypes.repository#//@dataTypes__Repository.1"/>
       </parameters__OperationSignature>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_MOAcsyNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_apis_CommentsService"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MGpQcCNZEe-_r6ow1x_eHw" entityName="java_util_List"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MHchsCNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_task_dtos_TaskDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MHeW5CNZEe-_r6ow1x_eHw" entityName="com_anilallewar_microservices_user_dto_UserDTO"/>
-  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MHe98CNZEe-_r6ow1x_eHw" entityName="java_security_Principal"/>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_M1Y2-DFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_apis_CommentsService"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_Mtwk8DFpEe-c8_8bjEOUhA" entityName="java_util_List"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MujPIzFpEe-c8_8bjEOUhA" entityName="java_security_Principal"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_Muj2MjFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_user_dto_UserDTO"/>
+  <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_MukdQDFpEe-c8_8bjEOUhA" entityName="com_anilallewar_microservices_task_dtos_TaskDTO"/>
 </repository:Repository>
