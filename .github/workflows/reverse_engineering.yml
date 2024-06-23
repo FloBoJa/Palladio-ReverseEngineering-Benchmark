@@ -54,17 +54,35 @@ jobs:
     runs-on: ubuntu-latest
     needs: collect_info
     continue-on-error: true
+    if: ${{  }}
     strategy:
       fail-fast: false
       matrix:
         directory: ${{ fromJson(needs.collect_info.outputs.array) }}
-        max-parallel: ${{  }}
 
     steps:
       - name: Execute Retriever
         uses: ./.github/workflows/execute_retriever.yml
         with:
-          matrix-name: ${{ matrix.name }}
+          overrideBenchmark: ${{ inputs.overrideBenchmark }}
+          analyzeVulnerabilities: ${{ inputs.analyzeVulnerabilities }}
+
+  generate_pcm_sequentially:
+    runs-on: ubuntu-latest
+    needs: collect_info
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        directory: ${{ fromJson(needs.collect_info.outputs.array) }}
+
+    steps:
+      - name: Execute Retriever
+        uses: ./.github/workflows/execute_retriever.yml
+        with:
+          overrideBenchmark: ${{ inputs.overrideBenchmark }}
+          analyzeVulnerabilities: ${{ inputs.analyzeVulnerabilities }}
 
   commit_results:
     runs-on: ubuntu-latest
