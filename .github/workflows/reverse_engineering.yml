@@ -28,7 +28,6 @@ jobs:
     outputs:
       array: ${{ steps.find_directories.outputs.array }}
       latest_version: ${{ steps.latest_version.outputs.value }}
-      max_parallel: ${{ steps.max_parallel.outputs.value }}
 
     steps:
       - name: Checkout repository
@@ -51,22 +50,13 @@ jobs:
           )
           echo "value=$LATEST_VERSION" >> $GITHUB_OUTPUT
 
-      - name: Determine maximum parallelism
-        id: max_parallel
-        run: |
-          if [ "${{ github.event.inputs.analyzeVulnerabilities }}" == "true" ]; then
-            echo "value=1" >> $GITHUB_OUTPUT
-          else
-            echo "value=10" >> $GITHUB_OUTPUT
-          fi
-
   generate_pcm:
     runs-on: ubuntu-latest
     needs: collect_info
     continue-on-error: true
     strategy:
       fail-fast: false
-      max-parallel: ${{ needs.collect_info.outputs.max_parallel }}
+      max-parallel: ${{ inputs.analyzeVulnerabilities == 'true' && 1 || 1000 }}
       matrix:
         directory: ${{ fromJson(needs.collect_info.outputs.array) }}
 
